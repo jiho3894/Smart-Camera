@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="style.css">
+<title>Smart Camera</title>
 </head>
-<body>
-    <h1>메인 서버</h1>
-    <a href="index.html">확인하기</a>
-</body>
+    <body>
+        <!-- 제목 -->
+        <div class="title">
+            <p>Camera</p>
+        </div>
+        <!--로그인 창-->
+        <div class="login">
+            <form class="login_form" action="open.html">
+                <h2>정보를 입력해주세요</h2>
+                <!-- 내용 초기화 -->
+                <input  class="reset" type="reset" value="다시 입력" onclick="alert('정보를 다시 입력합니다.');">
+                <!-- 정보 입력 -->
+                <p>
+                    <strong>기관 이름 : </strong> <br>
+                    <input type="text" name="name" placeholder="이름">
+                </p>
+                <p>
+                    <strong>전화번호 : </strong> <br>
+                    <input type="tel" name="id" placeholder="(-) 제외 11 자리" maxlength= "11">
+                </p>
+                <p>
+                    <strong>비밀번호 : </strong> <br>
+                    <input type="password" name="password" placeholder="비밀번호 (4자리 이하)" maxlength="4">
+                </p>
+                <p>
+                    <strong> 사용처 : </strong> <br>
+                    <input type="radio" name="gender" value="남">남자
+                    <input type="radio" name="gender" value="여">여자
+                </p>
+                <p>
+                    <strong>생년월일 : </strong> <br>
+                    <input type="date" name="date" value="">
+                </p>
+                <p>
+                    <strong>사용처 : </strong> <br>
+                    <input type="radio" name="part" value="손님" > 집
+                    <input type="radio" name="part" value="학생" > 학교
+                    <input type="radio" name="part" value="교수" > 공공기관
+                    <input type="radio" name="part" value="직원" > 음식점
+                </p>
+				<div class="submit">
+                    <input type="submit" value="입력완료" onclick="removeCheck()">
+                </div>
+            </form>
+        </div>
+    </body>
 </html>
