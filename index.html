@@ -1,21 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Camera</title>
-  <link rel="stylesheet" href="openStyle.css">
+<meta charset="UTF-8">
+<title>Slide</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <div class="clock">
-    <h1>00:00:00</h1>
+  <div class="loader_container">
+    <div class="loader"></div>
+  </div>
+  <div class="test_container">
+    <div class="test"></div>
+  </div>
+  <div class="dark">
+    <input type="button" value="눌러">
+  </div>
+  <header class="menubar">
+    <div class="menu">
+        <i class="fas fa-user-secret"></i>
+      <a href="index.html">
+        Smart-Security
+      </a>
     </div>
-    <h2>실시간 확인중</h2>
-    <img class="camera" src="{{ url_for('video_feed') }}">
-    <a href="./mainHome/index.html">
-      <input class="mainHome" type="button" value="Open Main Home Server">
-    </a>
-    <script src="liveClock.js"></script>
-  </body>
+    <div class="role">
+      <i class="fas fa-bars"></i>
+    </div>
+  </header>
+<div class="slide">
+  <ul>
+    <li> <img src="../mainHome/image/1.jpg"> </li>
+    <li> <img src="../mainHome/image/2.jpg"> </li>
+    <li> <img src="../mainHome/image/3.jpg"> </li>
+    <li> <img src="../mainHome/image/4.jpg"> </li>
+  </ul>
+</div>
+<script src="slide.js"></script>
+<script src="https://kit.fontawesome.com/76e1965d86.js" crossorigin="anonymous"></script>
+<script>
+  $(window).on("load",function() {
+      $(".loader_container").each(function(){
+        $(this)
+        .delay(1000)
+      })
+      $(".loader_container").fadeOut(1000);
+      $(".test_container").each(function(){
+        $(this)
+        .delay(2000)
+      })
+      $(".test_container").fadeOut(3000);
+  });
+
+  $(".dark").click("click",function() {
+    $(".dark").fadeOut(2000);
+  });
+</script>
+</body>
 </html>
