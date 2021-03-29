@@ -72,7 +72,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 3;
+    z-index: 5;
 }
 
 .loader {
@@ -101,4 +101,51 @@ img {
     to{
         transform: rotate(360deg);
     }
+}
+
+.test_container {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+}
+
+.test {
+    width: 100px;
+    height: 100px;
+    border: 10px solid;
+    color: blue;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: tester 1s linear infinite;
+}
+
+@keyframes tester{
+    20% {
+        color: rgb(255, 0, 0);
+    }
+    40% {
+        color: rgb(0, 255, 0);
+    }
+    60% {
+        color: rgb(0, 0, 241);
+    }
+    80% {
+        color: rgb(133, 133, 133);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.dark {
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    z-index: 3;
+    position: fixed;
 }
