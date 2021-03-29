@@ -1,57 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link rel="stylesheet" href="style.css">
-<title>Smart Camera</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Camera</title>
+  <link rel="stylesheet" href="openStyle.css">
 </head>
-    <body>
-        <!-- 제목 -->
-        <div class="title">
-            <p>Smart Camera</p>
-        </div>
-        <!--로그인 창-->
-        <div class="login">
-            <form class="login_form" action="open.html" onsubmit="return checkAlert()">
-                <h2>정보를 입력해주세요</h2>
-                <!-- 내용 초기화 -->
-                <input  class="reset" type="reset" value="다시 입력" onclick="alert('정보를 다시 입력합니다.');">
-                <!-- 정보 입력 -->
-                <p>
-                    <strong>사용자 이름 : </strong> <br>
-                    <input type="text" name="name" placeholder="이름">
-                </p>
-                <p>
-                    <strong>전화번호 : </strong> <br>
-                    <input type="tel" name="tel" placeholder="(-) 제외 11 자리" maxlength= "11">
-                </p>
-                <p>
-                    <strong>이메일 : </strong> <br>
-                    <input type="email" name="email" placeholder="이메일">
-                </p>
-                <p>
-                    <strong> 성별 : </strong> <br>
-                    <input type="radio" name="gender" value="남">남자
-                    <input type="radio" name="gender" value="여">여자
-                </p>
-                <p>
-                    <strong>생년월일 : </strong> <br>
-                    <input type="date" name="date" value="">
-                </p>
-                <p>
-                    <strong>사용처 : </strong> <br>
-                    <input type="radio" name="part" value="손님" > 집
-                    <input type="radio" name="part" value="학생" > 회사
-                    <input type="radio" name="part" value="교수" > 개인 목적
-                </p>
-				<div class="submit">
-                    <input type="submit" value="입력완료">
-                </div>
-            </form>
-        </div>
-        <script src="checkAlert.js"></script>
-    </body>
+<body>
+    <div class="clock">
+    <h1>00:00:00</h1>
+    </div>
+    <h2>실시간 확인중</h2>
+    <img class="camera" src="{{ url_for('video_feed') }}">
+    <script src="liveClock.js"></script>
+  </body>
 </html>
