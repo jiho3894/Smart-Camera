@@ -13,10 +13,13 @@
     <div class="loader"></div>
   </div>
   <div class="test_container">
-    <div class="test"></div>
+      <i class="fas fa-user-secret"></i>
   </div>
   <div class="dark">
-    <input type="button" value="눌러">
+    <input class="darkBtn" type="button" value="START">
+  </div>
+  <div class="brigth">
+    <input class="darkRole" type="button" value="확인">
   </div>
   <header class="menubar">
     <div class="menu">
@@ -43,18 +46,27 @@
   $(window).on("load",function() {
       $(".loader_container").each(function(){
         $(this)
-        .delay(1000)
+        .delay(3000)
       })
       $(".loader_container").fadeOut(1000);
       $(".test_container").each(function(){
         $(this)
-        .delay(2000)
+        .delay(5000)
       })
       $(".test_container").fadeOut(3000);
   });
 
   $(".dark").click("click",function() {
     $(".dark").fadeOut(2000);
+    $(".darkRole").each(function(){
+      $(this)
+      .delay(2000)
+    })
+    $("darkRole").fadeIn(2000);
+  });
+
+  $(".darkRole").click("click",function() {
+    $(".brigth").fadeOut(2000);
   });
 </script>
 </body>
