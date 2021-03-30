@@ -35,7 +35,7 @@ source ~/.profile
 workon cv
 ```
 
-그 다음 , navigate to the repository directory
+Next, navigate to the repository directory
 
 ```
 cd Smart-Security-Camera

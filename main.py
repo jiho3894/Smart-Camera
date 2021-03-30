@@ -27,11 +27,11 @@ def check_for_objects():
 			frame, found_obj = video_camera.get_object(object_classifier)
 			if found_obj and (time.time() - last_epoch) > email_update_interval:
 				last_epoch = time.time()
-				print "Sending email..."
+				print("Sending email...")
 				sendEmail(frame)
-				print "done!"
+				print ("done!")
 		except:
-			print "Error sending email: ", sys.exc_info()[0]
+			print ("Error sending email: "), sys.exc_info()[0]
 
 @app.route('/')
 @basic_auth.required
@@ -42,7 +42,7 @@ def gen(camera):
     while True:
         frame = camera.get_frame()
         yield (b'--frame\r\n'
-               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
 @app.route('/video_feed')
 def video_feed():
