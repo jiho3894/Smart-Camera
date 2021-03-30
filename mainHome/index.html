@@ -5,69 +5,80 @@
 <title>Slide</title>
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body>
-  <div class="loader_container">
-    <div class="loader"></div>
-  </div>
-  <div class="test_container">
+  <body>
+    <!--첫 animatino play-->
+    <div class="loading_container">
+      <div class="loading"></div>
+    </div>
+    <div class="character_container">
       <i class="fas fa-user-secret"></i>
-  </div>
-  <div class="dark">
-    <input class="darkBtn" type="button" value="START">
-  </div>
-  <div class="brigth">
-    <input class="darkRole" type="button" value="확인">
-  </div>
-  <header class="menubar">
-    <div class="menu">
+    </div>
+    <div class="login_container">
+      <input class="loginBtn" type="button" value="Login">
+    </div>
+    <!--login Form 입력-->
+    <div class="login_Form">
+      <form class="login" onsubmit="return checkAlert()">
+        <h2>정보를 입력해주세요</h2>
+        <!-- 정보 입력 -->
+        <p>
+          <strong>사용자 이름 : </strong> <br>
+          <input type="text" name="name" placeholder="이름">
+        </p>
+        <p>
+          <strong>전화번호 : </strong> <br>
+          <input type="tel" name="tel" placeholder="(-) 제외 11 자리" maxlength= "11">
+        </p>
+        <p>
+          <strong>이메일 : </strong> <br>
+          <input type="email" name="email" placeholder="이메일">
+        </p>
+        <p>
+          <strong> 성별 : </strong> <br>
+          <input type="radio" name="gender" value="남">남자
+          <input type="radio" name="gender" value="여">여자
+        </p>
+        <p>
+          <strong>생년월일 : </strong> <br>
+          <input type="date" name="date" value="">
+        </p>
+        <p>
+          <strong>사용처 : </strong> <br>
+          <input type="radio" name="part" value="손님" > 집
+          <input type="radio" name="part" value="학생" > 회사
+          <input type="radio" name="part" value="교수" > 개인 목적
+        </p>
+        <div class="submit">
+          <input type="submit" value="입력완료">
+        </div>
+      </form>
+    </div>
+    <!--메인 홈페이지-->
+    <header class="menubar">
+      <div class="menu">
         <i class="fas fa-user-secret"></i>
-      <a href="index.html">
-        Smart-Security
-      </a>
-    </div>
-    <div class="role">
-      <i class="fas fa-bars"></i>
-    </div>
-  </header>
-<div class="slide">
-  <ul>
-    <li> <img src="../mainHome/image/1.jpg"> </li>
-    <li> <img src="../mainHome/image/2.jpg"> </li>
-    <li> <img src="../mainHome/image/3.jpg"> </li>
-    <li> <img src="../mainHome/image/4.jpg"> </li>
-  </ul>
-</div>
-<script src="slide.js"></script>
-<script src="https://kit.fontawesome.com/76e1965d86.js" crossorigin="anonymous"></script>
-<script>
-  $(window).on("load",function() {
-      $(".loader_container").each(function(){
-        $(this)
-        .delay(3000)
-      })
-      $(".loader_container").fadeOut(1000);
-      $(".test_container").each(function(){
-        $(this)
-        .delay(5000)
-      })
-      $(".test_container").fadeOut(3000);
-  });
-
-  $(".dark").click("click",function() {
-    $(".dark").fadeOut(2000);
-    $(".darkRole").each(function(){
-      $(this)
-      .delay(2000)
-    })
-    $("darkRole").fadeIn(2000);
-  });
-
-  $(".darkRole").click("click",function() {
-    $(".brigth").fadeOut(2000);
-  });
-</script>
-</body>
+        <a href="index.html">
+          Smart-Security
+        </a>
+      </div>
+      <div class="role">
+        <i class="fas fa-bars"></i>
+      </div>
+    </header>
+  <div class="slide">
+    <ul>
+      <li> <img src="../mainHome/image/1.jpg"> </li>
+      <li> <img src="../mainHome/image/2.jpg"> </li>
+      <li> <img src="../mainHome/image/3.jpg"> </li>
+      <li> <img src="../mainHome/image/4.jpg"> </li>
+    </ul>
+  </div>
+  <script src="slide.js"></script>
+  <script src="animation.js"></script>
+  <script src="yesNo.js"></script>
+  <script src="https://kit.fontawesome.com/76e1965d86.js" crossorigin="anonymous"></script>
+  </body>
 </html>
