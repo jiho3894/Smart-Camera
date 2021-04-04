@@ -7,7 +7,7 @@ IoT Raspberry Pi security camera running open-cv for object detection. The camer
 
 This project uses a Raspberry Pi Camera to stream video. Before running the code, make sure to configure the raspberry pi camera on your device
 
-Open the terminal and run
+Open the terminal and run.
 
 ```
 sudo raspi-config
