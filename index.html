@@ -1,21 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Camera</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Slide</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body>
-    <div class="clock">
-    <h1>00:00:00</h1>
+<style>
+body {
+  margin:0;
+  padding:0;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  text-align: center;
+}
+
+.camera {
+  width: 500px;
+  height: 500px;
+  background-color: red;
+}
+
+header {
+  position: fixed;
+  top:0;
+  background: linear-gradient(to right, #ffc5c4, #6b9ae0);
+  width: 100vw;
+  height: 100vh;
+}
+
+/* 라이브 시계 */
+header .clock {
+  font-size: 50px;
+  display: flex;
+  width: 600px;
+  justify-content: center;
+  line-height: 60px;
+  margin: auto;
+  margin-top: 110px;
+}
+
+/* 첫 화면 구성 */
+
+.loading_container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.loading {
+  width: 30px;
+  height: 30px;
+  border: 3px solid;
+  color: blue;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: loader 1s linear infinite;
+}
+
+@keyframes loader{
+  20% {
+      color: rgb(255, 0, 0);
+  }
+  40% {
+      color: rgb(0, 255, 0);
+  }
+  60% {
+      color: rgb(0, 0, 241);
+  }
+  80% {
+      color: rgb(133, 133, 133);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.character_container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+}
+
+.character_container .fa-user-secret {
+  font-size: 100px;
+  color: red;
+  animation: character 1s linear;
+}
+
+@keyframes character{
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: .75;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.login_container {
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  z-index: 3;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginBtn {
+  font-size: 40px;
+  background-color: blue;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: .2s linear;
+}
+
+.loginBtn:hover {
+  transform: scale(1.3);
+  border-radius: 100%;
+}
+
+/* 로그인 폼 */
+.login_Form {
+  position: fixed;
+  z-index: 2; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+
+.login {
+  padding: 30px 50px 50px 50px;
+  border: 1px silver solid;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px black;
+}
+
+</style>
+  <body>
+    <header>
+      <div class="clock">
+        <h1>00:00:00</h1>
+      </div>
+      <h2>실시간 확인중</h2>
+      <img class="camera" src="{{ url_for('video_feed') }}">
+    </header>
+    <!--첫 animatino play-->
+    <div class="loading_container">
+      <div class="loading"></div>
     </div>
-    <h2>실시간 확인중</h2>
-    <img class="camera" src="{{ url_for('video_feed') }}">
-    <a href="./mainHome/index.html">
-      <input class="mainHome" type="button" value="Open Main Home Server">
-    </a>
-    <script src="liveClock.js"></script>
+    <div class="character_container">
+      <i class="fas fa-user-secret"></i>
+    </div>
+    <div class="login_container">
+      <input class="loginBtn" type="button" value="Login">
+    </div>
+    <!--login Form 입력-->
+    <div class="login_Form">
+      <form class="login" onsubmit="return checkAlert()">
+        <h2>정보를 입력해주세요</h2>
+        <!-- 정보 입력 -->
+        <p>
+          <strong>사용자 이름 : </strong> <br>
+          <input type="text" name="name" placeholder="이름">
+        </p>
+        <p>
+          <strong>전화번호 : </strong> <br>
+          <input type="tel" name="tel" placeholder="(-) 제외 11 자리" maxlength= "11">
+        </p>
+        <p>
+          <strong>이메일 : </strong> <br>
+          <input type="email" name="email" placeholder="이메일">
+        </p>
+        <p>
+          <strong> 성별 : </strong> <br>
+          <input type="radio" name="gender" value="남">남자
+          <input type="radio" name="gender" value="여">여자
+        </p>
+        <p>
+          <strong>생년월일 : </strong> <br>
+          <input type="date" name="date" value="">
+        </p>
+        <p>
+          <strong>사용처 : </strong> <br>
+          <input type="radio" name="part" value="손님" > 집
+          <input type="radio" name="part" value="학생" > 회사
+          <input type="radio" name="part" value="교수" > 개인 목적
+        </p>
+        <div class="submit">
+          <input type="submit" value="입력완료">
+        </div>
+      </form>
+    </div>
+  <script>
+  const clockEvent = document.querySelector(".clock") , 
+    clockTitle = clockEvent.querySelector("h1");
+
+  function getTime() {
+      const date = new Date();
+      const hours = date.getHours();
+      const minutes = date.getMinutes();
+      const seconds = date.getSeconds();
+      clockTitle.innerHTML = `
+      ${hours < 10 ? `0${hours}` : hours}:
+      ${minutes < 10 ? `0${minutes}` : minutes}:
+      ${seconds < 10 ? `0${seconds}` : seconds}
+      `;
+  }
+
+  function init() {
+      getTime();
+      setInterval(getTime , 1000);
+  }
+  init();
+  </script>
+  <script>
+  $(window).on("load",function() {
+    $(".loading_container").each(function(){
+      $(this)
+      .delay(1)
+    })
+    $(".loading_container").fadeOut("slow");
+    $(".character_container").each(function(){
+      $(this)
+      .delay(1)
+    })
+    $(".character_container").fadeOut(1);
+  });
+  $(".loginBtn").click("click",function() {
+    $(".login_container").fadeOut(0);
+  });
+
+  $(".submit").click("click",function() {
+  $(".login_Form").fadeOut(0);
+  });
+  </script>
+  <script>
+  function checkAlert() {
+    const check_submit=confirm('로그인 하시겠습니까?');
+    return check_submit;
+  }
+  </script>
+  <script src="https://kit.fontawesome.com/76e1965d86.js" crossorigin="anonymous"></script>
   </body>
 </html>
