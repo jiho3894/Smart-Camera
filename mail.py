@@ -1,20 +1,16 @@
-import smtplib
+import smtplib, os
+from email import encoders
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 
-# Email you want to send the update from (only works with gmail)
-fromEmail = 'crsn1111@gmail.com'
-# You can generate an app password here to avoid storing your password in plain text
-# https://support.google.com/accounts/answer/185833?hl=en
-fromEmailPassword = 'SECRET'
-
-# Email you want to send the update to
-toEmail = 'crsn1013@gmail.com'
+fromEmail = '보내는 사람 이메일 입력'
+fromEmailPassword = '보내는 사람 이메일의 앱 비밀번호'
+toEmail = '받는 사람 이메일'
 
 def sendEmail(image):
 	msgRoot = MIMEMultipart('related')
-	msgRoot['Subject'] = 'Security Update'
+	msgRoot['Subject'] = '인물을 감지했습니다!!'
 	msgRoot['From'] = fromEmail
 	msgRoot['To'] = toEmail
 	msgRoot.preamble = 'Raspberry pi security camera update'
@@ -31,7 +27,7 @@ def sendEmail(image):
 	msgImage.add_header('Content-ID', '<image1>')
 	msgRoot.attach(msgImage)
 
-	smtp = smtplib.SMTP('smpt.gmail.com', 587)
+	smtp = smtplib.SMTP('smtp.gmail.com', 587)
 	smtp.starttls()
 	smtp.login(fromEmail, fromEmailPassword)
 	smtp.sendmail(fromEmail, toEmail, msgRoot.as_string())
