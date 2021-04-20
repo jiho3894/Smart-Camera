@@ -7,12 +7,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="1052506175502-tp09gvd9v6rbmbrakhi0e09ssqs16qbb.apps.googleusercontent.com">
 </head>
 <style>
-body {
+* {
   margin:0;
   padding:0;
   font-family: 'Roboto', sans-serif;
+}
+
+body {
   background-color: black;
 }
 
@@ -69,7 +74,7 @@ header .clock {
   border-radius: 50%;
   border-top-color: transparent;
   animation: loader 1s linear infinite;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 @keyframes loader{
@@ -106,7 +111,7 @@ header .clock {
   color: red;
   animation: logo 10s linear;
   animation-iteration-count: infinite;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 @keyframes logo {
@@ -270,7 +275,55 @@ form {
   font-size: 13px;
 }
 
+.g-signin2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 
+@media screen and (max-width: 550px) {
+  
+  .loading {
+    width: 10px;
+    height: 10px;
+  }
+
+  .character_container .fa-user-secret {
+    font-size: 27px;
+  }
+
+  .start {
+    font-size: 12px;
+  }
+  .login_form h1 {
+    font-size: 30px;
+  }
+  
+  .login_form {
+    width: 240px;
+    height: 350px;
+  }
+
+  header .camera {
+  margin-top: 30px;
+  display: flex;
+  width: 80%;
+  height: 70%;
+  background-color: red;
+  }
+
+  header .clock {
+  position: absolute;
+  display: flex;
+  font-size: 13px;
+  right: 20%;
+  justify-content: center;
+  line-height: 60px;
+  margin: auto;
+  margin-top: 50px;
+  color: green;
+}
+}
 
 </style>
   <body>
@@ -302,6 +355,7 @@ form {
         <input type="button" class="loginBtn" value="Login">
     
         <div class="bottom_text">
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
           Don't have account? <a href="#"> Sign up</a>
         </div>
       </div>
@@ -341,7 +395,7 @@ form {
     })
     $(".loading_container").fadeOut("fast");
   });
-  $(".character_container").click("click",function(){
+  $(".start").click("click",function(){
     $(".character_container").fadeOut("fast");
   });
   $(".loginBtn").click("click",function(){
