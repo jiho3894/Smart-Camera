@@ -5,6 +5,4 @@ Python 코드를 작성하여 카메라 기능과 이메일 전송 기능 활성
 
 ![1](https://user-images.githubusercontent.com/79081800/114302764-6f564a80-9b05-11eb-9055-6682a97cf69d.jpg)
 
-현 상황
-1. 반응형 웹 미완성
-2.python flask 를 이용한 회원가입 데이터 저장하기
+설명
