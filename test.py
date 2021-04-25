@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import cv2
 import sys
+from moter import moveMoter
 from mail import sendEmail
 from flask import Flask, render_template, Response
 from camera import VideoCamera
@@ -19,26 +20,6 @@ app.config['BASIC_AUTH_FORCE'] = True
 
 basic_auth = BasicAuth(app)
 last_epoch = 0
-
-def moter():
-    SERVO_PIN = 18
-    GPIO.setwarnings(False)
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(SERVO_PIN, GPIO.OUT)
-    servo = GPIO.PWM(SERVO_PIN,50)
-    servo.start(0)
-    while True:
-        try:
-            servo.ChangeDutyCycle(2.5)
-                time.sleep(3)
-                servo.ChangeDutyCycle(7.5)
-                time.sleep(3)
-                servo.ChangeDutyCycle(2.5)
-                time.sleep(3)
-    
-    except keyboardInterrupt:
-        servo.stop()
-        GPIO.cleanup()
 
 def check_for_objects():  # 이메일 전송 관련 코드
 	global last_epoch

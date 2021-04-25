@@ -32,7 +32,7 @@ class VideoCamera(object):
             gray,
             scaleFactor=1.1,
             minNeighbors=5,
-            minSize=(30, 30),
+            minSize=(50, 50),
             flags=cv2.CASCADE_SCALE_IMAGE
         )
 

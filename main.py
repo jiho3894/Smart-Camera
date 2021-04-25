@@ -1,5 +1,7 @@
+import RPi.GPIO as GPIO
 import cv2
 import sys
+from moter import moveMoter
 from mail import sendEmail
 from flask import Flask, render_template, Response
 from camera import VideoCamera
@@ -7,7 +9,7 @@ from flask_basicauth import BasicAuth
 import time
 import threading
 
-email_update_interval = 600 # 이메일 전송 주기
+email_update_interval = 10 # 이메일 전송 주기
 video_camera = VideoCamera(flip=True) #카메라 스트리밍
 object_classifier = cv2.CascadeClassifier("models/haarcascade_frontalface_default.xml") # Open CV 파일
 
