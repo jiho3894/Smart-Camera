@@ -85,7 +85,7 @@ toEmail = '받는 사람 이메일'
 
 > index.html
 
-<img scr="https://user-images.githubusercontent.com/79081800/116017390-6a070d00-a67a-11eb-933c-e5ca71d28d98.jpg">
+<img src="https://user-images.githubusercontent.com/79081800/116017733-5dcf7f80-a67b-11eb-8640-377b644a9485.jpg">
 <img src="https://user-images.githubusercontent.com/79081800/116017391-6bd0d080-a67a-11eb-8277-9f2458f22fbd.jpg">
 <img src="https://user-images.githubusercontent.com/79081800/116017490-af2b3f00-a67a-11eb-8ca0-26b489f522bf.jpg">
 
