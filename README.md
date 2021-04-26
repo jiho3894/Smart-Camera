@@ -20,11 +20,13 @@
 * Flask
 * AUTH
 
+## 바로가기
+- [main.py](#1)
 <img scr="https://user-images.githubusercontent.com/79081800/114302764-6f564a80-9b05-11eb-9055-6682a97cf69d.jpg">
 
 # 사용 방법
-
-# main.py
+ 
+# main.py <a id="1">
 ```python
 app.config['BASIC_AUTH_USERNAME'] = '아이디'
 app.config['BASIC_AUTH_PASSWORD'] = '비밀번호'
