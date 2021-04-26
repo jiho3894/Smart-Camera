@@ -15,7 +15,7 @@
 ## 그 외 라이브러리 , 프레임워크 :
 * Jquery
 * Vue.js
-* Open CV
+* Open CV [설치 방법](http://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/)
 * GPIO
 * Flask
 * AUTH
