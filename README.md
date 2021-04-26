@@ -92,7 +92,7 @@ toEmail = '받는 사람 이메일'
 
 <img src="https://user-images.githubusercontent.com/79081800/116017733-5dcf7f80-a67b-11eb-8640-377b644a9485.jpg" width="700" height="500">
 <img src="https://user-images.githubusercontent.com/79081800/116017391-6bd0d080-a67a-11eb-8277-9f2458f22fbd.jpg" width="600" height="800">
-<img src="https://user-images.githubusercontent.com/79081800/116017490-af2b3f00-a67a-11eb-8ca0-26b489f522bf.jpg" width="500" height="500">
+<img src="https://user-images.githubusercontent.com/79081800/116017490-af2b3f00-a67a-11eb-8ca0-26b489f522bf.jpg" width="700" height="500">
 
 
 [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:snugyun01@gmail.com)](mailto:crsn1111@gmail.com)
