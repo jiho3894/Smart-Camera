@@ -22,6 +22,9 @@
 
 ## 바로가기
 - [main.py](#1)
+- [GPIO](#2)
+- [mail.py](#3)
+- [index.html](#4)
 <img scr="https://user-images.githubusercontent.com/79081800/114302764-6f564a80-9b05-11eb-9055-6682a97cf69d.jpg">
 
 # 사용 방법
@@ -34,7 +37,7 @@ app.config['BASIC_AUTH_FORCE'] = True  #인증 여부
 ```
 ##### Flask 서버 입장시 인증 여부를 물어보는 코드
 ##### 본인의 상황에 따라 자율롭게 수정해주세요.
-> # GPIO
+# GPIO <a id="2">
 
 <img src="https://user-images.githubusercontent.com/79081800/116015139-4a201b00-a673-11eb-9822-d424116e3e57.png">
 
@@ -74,7 +77,7 @@ if __name__ == '__main__':  # 통신 연결
 ##### '0.0.0.0'을 본인 ip로 변경해주세요 또한 포트 번호를 고유로 설정할 경우
 ##### app.run 코드 안에 (port=포트번호) 를 입력해주세요 
 
-# mail.py
+# mail.py <a id="3">
 ```python
 fromEmail = '보내는 사람 이메일 입력'
 fromEmailPassword = '보내는 사람 이메일의 앱 비밀번호'
@@ -85,11 +88,11 @@ toEmail = '받는 사람 이메일'
 ##### 본인이 수령하고 싶은 이메일을 입력해주세요
 ##### [앱 비밀번호](https://support.google.com/accounts/answer/185833?hl=ko) 설정방법은 다음과 같습니다.
 
-> index.html
+# index.html <a id="4">
 
-<img src="https://user-images.githubusercontent.com/79081800/116017733-5dcf7f80-a67b-11eb-8640-377b644a9485.jpg">
-<img src="https://user-images.githubusercontent.com/79081800/116017391-6bd0d080-a67a-11eb-8277-9f2458f22fbd.jpg">
-<img src="https://user-images.githubusercontent.com/79081800/116017490-af2b3f00-a67a-11eb-8ca0-26b489f522bf.jpg">
+<img src="https://user-images.githubusercontent.com/79081800/116017733-5dcf7f80-a67b-11eb-8640-377b644a9485.jpg" width="500" height="500">
+<img src="https://user-images.githubusercontent.com/79081800/116017391-6bd0d080-a67a-11eb-8277-9f2458f22fbd.jpg" width="500" height="500">
+<img src="https://user-images.githubusercontent.com/79081800/116017490-af2b3f00-a67a-11eb-8ca0-26b489f522bf.jpg" width="500" height="500">
 
 
 [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:snugyun01@gmail.com)](mailto:crsn1111@gmail.com)
