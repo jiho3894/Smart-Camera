@@ -6,7 +6,14 @@
  **물체를 인식**하고 인식한 장면을 촬영 후 **이메일로 즉시 발송**하여 상황을 파악할 수 있도록 하고
  그 장면을 **웹에서 확인이 가능**하도록 제품을 만들었음.
  
-## 사용언어 :
+## 바로가기
+- [사용언어](#5)
+- [main.py](#1)
+- [GPIO](#2)
+- [mail.py](#3)
+- [index.html](#4)
+ 
+## 사용언어 : <a id="5">
 * HTML 5
 * CSS 3
 * JavaScript
@@ -19,12 +26,6 @@
 * GPIO
 * Flask
 * AUTH
-
-## 바로가기
-- [main.py](#1)
-- [GPIO](#2)
-- [mail.py](#3)
-- [index.html](#4)
 
 <img src="https://user-images.githubusercontent.com/79081800/114302764-6f564a80-9b05-11eb-9055-6682a97cf69d.jpg">
 
