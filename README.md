@@ -85,9 +85,9 @@ toEmail = '받는 사람 이메일'
 
 > index.html
 
-<img scr="https://user-images.githubusercontent.com/79081800/116017390-6a070d00-a67a-11eb-933c-e5ca71d28d98.jpg" width="600" heigth="600">
-
-<img src="https://user-images.githubusercontent.com/79081800/116017391-6bd0d080-a67a-11eb-8277-9f2458f22fbd.jpg" width="600" heigth="600">
+<img scr="https://user-images.githubusercontent.com/79081800/116017390-6a070d00-a67a-11eb-933c-e5ca71d28d98.jpg">
+<img src="https://user-images.githubusercontent.com/79081800/116017391-6bd0d080-a67a-11eb-8277-9f2458f22fbd.jpg">
+<img src="https://user-images.githubusercontent.com/79081800/116017490-af2b3f00-a67a-11eb-8ca0-26b489f522bf.jpg">
 
 
 [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:snugyun01@gmail.com)](mailto:crsn1111@gmail.com)
