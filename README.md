@@ -1,4 +1,4 @@
-![waving](https://capsule-render.vercel.app/api?type=waving&height=200&text=Smart-Security&fontAlign=58&fontAlignY=30&color=gradient)
+![waving](https://capsule-render.vercel.app/api?type=waving&height=200&width=500&text=Smart-Security&fontAlign=58&fontAlignY=30&color=gradient)
 
 # 스마트 보안 카메라
  
