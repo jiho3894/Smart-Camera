@@ -90,7 +90,7 @@ toEmail = '받는 사람 이메일'
 ##### [앱 비밀번호](https://support.google.com/accounts/answer/185833?hl=ko) 설정방법은 다음과 같습니다.
 
 # index.html <a id="4">
-[실행 과정 확인하기](https://github.com/jiho3894/Smart-Camera/files/6376389/1.pdf)
+[실행 과정 확인하기](https://github.com/jiho3894/Smart-Camera/files/6376400/2.pdf)
 
 [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:snugyun01@gmail.com)](mailto:crsn1111@gmail.com)
 
