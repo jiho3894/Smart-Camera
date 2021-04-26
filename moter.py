@@ -1,8 +1,6 @@
 import RPi.GPIO as GPIO
 import time
 
-
-def moveMoter():
     SERVO_PIN = 18
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BCM)
@@ -13,11 +11,9 @@ def moveMoter():
     try:
         while True:
             servo.ChangeDutyCycle(2.5)
-            time.sleep(3)
+            sleep(10)
             servo.ChangeDutyCycle(7.5)
-            time.sleep(3)
-            servo.ChangeDutyCycle(2.5)
-            time.sleep(3)
+            sleep(10)
 
     except keyboardInterrupt:
             servo.stop()
