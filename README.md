@@ -87,7 +87,7 @@ toEmail = '받는 사람 이메일'
 
 ##### 물체 촬영 후 이메일 전송 코드 입니다 호스트의 이메일을 입력하고
 ##### 본인이 수령하고 싶은 이메일을 입력해주세요
-##### [앱 비밀번호](https://support.google.com/accounts/answer/185833?hl=ko) 설정방법은 다음과 같습니다.
+##### 앱 비밀번호 설정방법은 다음과 같습니다. [앱 비밀번호 만들기](https://support.google.com/accounts/answer/185833?hl=ko)
 
 # index.html <a id="4">
 [실행 과정 확인하기](https://github.com/jiho3894/Smart-Camera/files/6376400/2.pdf)
