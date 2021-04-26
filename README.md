@@ -97,8 +97,8 @@ toEmail = '받는 사람 이메일'
 [실행 과정 확인하기](https://github.com/jiho3894/Smart-Camera/files/6376400/2.pdf)
 
 # 현 수정사안 :
-- Moter 기능 불안정 상태
-- Moter 기능을 route로 자유롭게 필요시 사용하도록 수정중 
+- Servo motor 기능 불안정 상태
+- Servo motor 기능을 route로 자유롭게 필요시 사용하도록 수정중 
 - AUTH Gmail 로그인이 localhost 만 적용되는 문제
 - 웹 페이지 CSS 추가 변경 진행중
 
