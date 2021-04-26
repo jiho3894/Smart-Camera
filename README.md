@@ -25,7 +25,7 @@
 - [GPIO](#2)
 - [mail.py](#3)
 - [index.html](#4)
-- 
+
 <img src="https://user-images.githubusercontent.com/79081800/114302764-6f564a80-9b05-11eb-9055-6682a97cf69d.jpg">
 
 # 사용 방법
