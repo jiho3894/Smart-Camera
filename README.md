@@ -74,3 +74,7 @@ if __name__ == '__main__':  # 통신 연결
 
 [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:snugyun01@gmail.com)](mailto:crsn1111@gmail.com)
 
+<figure>
+    <img src="https://user-images.githubusercontent.com/79081800/116015139-4a201b00-a673-11eb-9822-d424116e3e57.png">
+</figure
+
