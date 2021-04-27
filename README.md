@@ -27,7 +27,7 @@
 * Open CV [설치 방법](http://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/)
 * GPIO
 * Flask
-* OAUTH 2.0
+* OAUTH 2.0 [사용 방법](https://developers.google.com/identity/protocols/oauth2)
 
 <img src="https://user-images.githubusercontent.com/79081800/114302764-6f564a80-9b05-11eb-9055-6682a97cf69d.jpg">
 
