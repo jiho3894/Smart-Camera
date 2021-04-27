@@ -18,7 +18,7 @@
 ## 사용언어 : <a id="5">
 * HTML 5
 * CSS 3
-* JavaScript
+* JavaScript (ES5 , ES6)
 * Python
 
 ## 그 외 라이브러리 , 프레임워크 :
@@ -27,7 +27,7 @@
 * Open CV [설치 방법](http://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/)
 * GPIO
 * Flask
-* AUTH
+* OAUTH 2.0
 
 <img src="https://user-images.githubusercontent.com/79081800/114302764-6f564a80-9b05-11eb-9055-6682a97cf69d.jpg">
 
