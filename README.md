@@ -103,7 +103,7 @@ toEmail = '받는 사람 이메일'
 - 웹 페이지 CSS 추가 변경 진행중
 
 #### 추가 피드백은 아래 이메일로 부탁드립니다
-#### 기타 오류가 있을시에 언제든지 의견을 받고 피드백 해드립니다
+#### 기타 오류가 있을시에 언제든지 의견을 받고 피드백 해드립니다.
 [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:snugyun01@gmail.com)](mailto:crsn1111@gmail.com)
 
 
