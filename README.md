@@ -29,6 +29,7 @@
 * Flask
 * OAUTH 2.0 [사용 방법](https://developers.google.com/identity/protocols/oauth2)
 
+<img src="https://user-images.githubusercontent.com/79081800/116809699-495b1d80-ab7a-11eb-9242-3a03d544a263.png" width="900" height="550">
 <img src="https://user-images.githubusercontent.com/79081800/114302764-6f564a80-9b05-11eb-9055-6682a97cf69d.jpg">
 
 # 사용 방법
