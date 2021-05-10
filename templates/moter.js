@@ -1,0 +1,3 @@
+function moter() {
+  fetch("/moter");
+}

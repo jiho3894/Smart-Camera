@@ -52,7 +52,6 @@ def gen(camera):  # 카메라 촬영 파일
                 b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
         
 @app.route('/moter')
-
 def moter():
     try:
         while True:

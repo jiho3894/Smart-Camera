@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Smart-Security</title>
+<title>Slide</title>
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -21,8 +21,10 @@
         <h2>{{ message }}</h2>
       </div>
       <img class="camera" src="{{ url_for('video_feed') }}">
+      <div class="motor">
+        <button  onclick="moter()">다 각도 감시</button>
+      </div>
     </header>
-    
 
     <!-- 로그인 폼 -->
     <form>
@@ -42,7 +44,7 @@
     
         <div class="bottom_text">
           <div class="g-signin2" data-onsuccess="onSignIn"></div>
-          Don't have account? <a href="#"> Sign up</a>
+          계정이 없으신가요? <a href="#"> Sign up</a>
         </div>
       </div>
     </form>
@@ -59,6 +61,7 @@
     <script src="loading.js"></script>
     <script src="focus.js"></script>
     <script src="vue.js"></script>
+    <script src="moter.js"></script>
     <script src="https://kit.fontawesome.com/76e1965d86.js" crossorigin="anonymous"></script>
   </body>
 </html>

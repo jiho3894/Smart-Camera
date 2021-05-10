@@ -4,21 +4,20 @@
   font-family: 'Roboto', sans-serif;
 }
 
-body {
-  background-color: black;
-}
+
 
 header {
   position: fixed;
   top:0;
   width: 100vw;
   height: 100vh;
+  background-image: linear-gradient(120deg,#3498db,#8e44ad);;
 }
 
 header .camera {
   display: flex;
   width: 70%;
-  height: 90%;
+  height: 80%;
   background-color: blue;
   margin:auto;
 }
@@ -26,7 +25,13 @@ header .camera {
 #app1 {
   text-align: center;
   color: white;
+  font-size: 25px;
 }
+
+#app1 button {
+  background-color: green;
+}
+
 /* 라이브 시계 */
 header .clock {
   position: absolute;
@@ -38,6 +43,16 @@ header .clock {
   margin: auto;
   margin-top: 50px;
   color: green;
+}
+
+.motor {
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.motor button {
+  font-size: 35px;
 }
 
 /* 첫 화면 구성 */
