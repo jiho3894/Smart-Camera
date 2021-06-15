@@ -100,10 +100,6 @@ toEmail = '받는 사람 이메일'
 # index.html <a id="4">
 [실행 과정 확인하기](https://github.com/jiho3894/Smart-Camera/files/6376400/2.pdf)
 
-# 현 수정사안 :
-- Servo motor 기능 불안정 상태
-- AUTH Gmail 로그인이 localhost 만 적용되는 문제
-
 #### 추가 피드백은 아래 이메일로 부탁드립니다
 #### 기타 오류가 있을시에 언제든지 의견을 받고 피드백 해드립니다
 [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:snugyun01@gmail.com)](mailto:crsn1111@gmail.com)
