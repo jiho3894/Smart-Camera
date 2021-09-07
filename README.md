@@ -16,9 +16,9 @@
 - [index.html](#4)
  
 ## 사용언어 : <a id="5">
-* HTML 5
-* CSS 3
-* JavaScript (ES5 , ES6)
+* HTML5
+* CSS3
+* JavaScript
 * Python
 
 ## 그 외 라이브러리 :
