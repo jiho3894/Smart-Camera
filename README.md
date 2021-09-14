@@ -1,6 +1,6 @@
 ![waving](https://capsule-render.vercel.app/api?type=waving&height=200&text=Smart-Security&fontAlign=58&fontAlignY=30&color=gradient)
 
-# React로 재코드화 
+# React로 재코드화 준비중
 
 # 스마트 보안 카메라
  
