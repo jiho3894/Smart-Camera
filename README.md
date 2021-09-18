@@ -1,5 +1,7 @@
 ![waving](https://capsule-render.vercel.app/api?type=waving&height=200&text=Smart-Security&fontAlign=58&fontAlignY=30&color=gradient)
 
+# 보안 카메라 사이트 리뉴얼 예정 (210918.
+
 # 스마트 보안 카메라
  
  **라즈베리파이 3B+** 를 이용하여 특정 시간 보안이 필요한 공간에서 **비디오 스트리밍**을 하여
