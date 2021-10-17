@@ -1,13 +1,9 @@
 ![waving](https://capsule-render.vercel.app/api?type=waving&height=200&text=Smart-Security&fontAlign=58&fontAlignY=30&color=gradient)
 
-# 보안 카메라 사이트 리뉴얼 예정 (211016.ver)
-1. react 제작
-2. flask 연동 (재진행)
-3. 카메라 연동 진행중 (부품)
-4. 카메라 외형 부품 연결중 (부품 도착)
-5. 라즈베리파이 (연동 완료)
-6. openCV 재 다운 (진행 예정)
-7. 모터 삭제 
+# 보안 카메라 사이트 리뉴얼 예정 (211017.ver)
+1. React로 사이트 제작중
+2. OpenCV 네트워크 오류로 재 다운로드중
+3. 카메라 모듈은 상태 확인완료
 
 # 스마트 보안 카메라
  
