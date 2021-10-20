@@ -13,11 +13,6 @@ video_camera = VideoCamera(flip=True) #카메라 스트리밍
 object_classifier = cv2.CascadeClassifier("models/haarcascade_frontalface_default.xml") # Open CV 파일
 
 app = Flask(__name__) # 서버 입장 데이터값 입력
-app.config['BASIC_AUTH_USERNAME'] = '아이디'
-app.config['BASIC_AUTH_PASSWORD'] = '비밀번호'
-app.config['BASIC_AUTH_FORCE'] = True
-
-basic_auth = BasicAuth(app)
 last_epoch = 0
 
 pin = 18
@@ -41,7 +36,6 @@ def check_for_objects():  # 이메일 전송 관련 코드
 			print ("error ") , sys.exc_info()[0]
 
 @app.route('/')  # Flask 프레임워크 index.html 연결
-@basic_auth.required
 def index():
     return render_template('index.html')
 
