@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-signin-client_id" content="1052506175502-tp09gvd9v6rbmbrakhi0e09ssqs16qbb.apps.googleusercontent.com">
+</head>
+  <body>
+    <header>
+      <div class="clock">
+        <h1>00:00:00</h1>
+      </div>
+      <div id="app1">
+        <h2>실시간 감시중</h2>
+      </div>
+      <img class="camera" src="{{ url_for('video_feed') }}">
+    </header>
+    <script src="liveClock.js"></script>
+  </body>
+</html>
