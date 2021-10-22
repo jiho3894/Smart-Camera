@@ -7,6 +7,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-signin-client_id" content="1052506175502-tp09gvd9v6rbmbrakhi0e09ssqs16qbb.apps.googleusercontent.com">
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
 </head>
   <body>
     <header>
@@ -17,6 +20,7 @@
         <h2>실시간 감시중</h2>
       </div>
       <img class="camera" src="{{ url_for('video_feed') }}">
+      <button onclick="onSocialClick()" name="google">클릭</button>
     </header>
     <script>
       const clockEvent = document.querySelector(".clock"); 
@@ -30,6 +34,30 @@
         }, 1000);
       }
       getTime();
+    </script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyDl0uI99Ad1p6pIDnpytyhU06jxruQfKrI",
+        authDomain: "smartsecurity-311307.firebaseapp.com",
+        projectId: "smartsecurity-311307",
+        storageBucket: "smartsecurity-311307.appspot.com",
+        messagingSenderId: "1052506175502",
+        appId: "1:1052506175502:web:421343c515e3b70baae45f"
+      };
+
+      firebase.initializeApp(firebaseConfig);
+      console.log(firebase);
+
+      const firebaseInstance = firebase;
+      const authService = firebase.auth();
+      const onSocialClick = () => {
+        let provider;
+        const hi = document.getElementsByName("google");
+        if(hi[0].name === "google") {
+          provider = new firebaseInstance.auth.GoogleAuthProvider();
+        }
+        authService.signInWithPopup(provider);
+      };
     </script>
   </body>
 </html>
