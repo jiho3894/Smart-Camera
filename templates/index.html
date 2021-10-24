@@ -3,24 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Slide</title>
-<link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-signin-client_id" content="1052506175502-tp09gvd9v6rbmbrakhi0e09ssqs16qbb.apps.googleusercontent.com">
-<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase"></script>
 <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
 </head>
   <body>
     <header>
       <div class="clock">
-        <h1></h1>
+        <h1>2021. 00. 00. 오전 00:00:00</h1>
       </div>
       <div id="app1">
         <h2>실시간 감시중</h2>
       </div>
       <img class="camera" src="{{ url_for('video_feed') }}">
-      <button onclick="onSocialClick()" name="google">클릭</button>
+      <a href="sms:01087696527?body=내용!!">문자전송</a>
     </header>
     <script>
       const clockEvent = document.querySelector(".clock"); 
@@ -36,28 +34,15 @@
       getTime();
     </script>
     <script>
-      const firebaseConfig = {
-        apiKey: "AIzaSyDl0uI99Ad1p6pIDnpytyhU06jxruQfKrI",
-        authDomain: "smartsecurity-311307.firebaseapp.com",
-        projectId: "smartsecurity-311307",
-        storageBucket: "smartsecurity-311307.appspot.com",
-        messagingSenderId: "1052506175502",
-        appId: "1:1052506175502:web:421343c515e3b70baae45f"
-      };
+      const userAgent = navigator.userAgent.toLocaleLowerCase()
 
-      firebase.initializeApp(firebaseConfig);
-      console.log(firebase);
-
-      const firebaseInstance = firebase;
-      const authService = firebase.auth();
-      const onSocialClick = () => {
-        let provider;
-        const hi = document.getElementsByName("google");
-        if(hi[0].name === "google") {
-          provider = new firebaseInstance.auth.GoogleAuthProvider();
-        }
-        authService.signInWithPopup(provider);
-      };
+      const number = Math.floor(Math.random() * 9999);
+      console.log(number);
+      if (userAgent.search('android') > -1) {
+          this.smsUrl = `sms:01087696527?body=${number}`
+      } else if (userAgent.search('iphone') > -1 || uagent.search('ipad') > -1) {
+          this.smsUrl = `sms:&body=${number}`
+      }
     </script>
   </body>
 </html>
