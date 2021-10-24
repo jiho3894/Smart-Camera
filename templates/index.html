@@ -4,22 +4,50 @@
 <meta charset="UTF-8">
 <title>Slide</title>
 <link rel="preconnect" href="https://fonts.gstatic.com">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script type="text/javascript">
+  emailjs.init('user_ctcoI2yDQRGZUR9S0APhl')
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-signin-client_id" content="1052506175502-tp09gvd9v6rbmbrakhi0e09ssqs16qbb.apps.googleusercontent.com">
-<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
 </head>
+<style>
+  .clock{
+    color: blue;
+  }
+</style>
   <body>
     <header>
+      <!--현재 시간-->
       <div class="clock">
         <h1>2021. 00. 00. 오전 00:00:00</h1>
-      </div>
-      <div id="app1">
         <h2>실시간 감시중</h2>
       </div>
+      <!-- 파이카메라 ( 이메일 인증 성공 시 확인 가능)-->
       <img class="camera" src="{{ url_for('video_feed') }}">
-      <a href="sms:01087696527?body=내용!!">문자전송</a>
+
+      <!--EmailJs 이메일 인증 보내기-->
+      <form id="email">
+        <div class="field">
+          <input type="hidden"id="from_name" value="김지호님">
+        </div>
+        <div class="field">
+          <input type="hidden"id="to_name" value="스마트 카메라">
+        </div>
+        <div class="field">
+          <input type="hidden"id="message">
+        </div>
+        <input type="submit" id="button" value="인증 번호 전송" >
+      </form>
+
+      <!--이메일로 도착한 번호와 동일하게 입력하였을때
+      로그인 성공 파이카메라 확인가능-->
+      <form id="sameNumber">
+        <input type="text" id="numberText">
+        <input type="submit"></input>
+      </form>
     </header>
+    <!-- 실시간 시간 표시 JS-->
     <script>
       const clockEvent = document.querySelector(".clock"); 
       const clockTitle = clockEvent.querySelector("h1");
@@ -33,16 +61,44 @@
       }
       getTime();
     </script>
+    <!-- 이메일 인증 , 인증 확인 절차 JS-->
     <script>
-      const userAgent = navigator.userAgent.toLocaleLowerCase()
-
       const number = Math.floor(Math.random() * 9999);
-      console.log(number);
-      if (userAgent.search('android') > -1) {
-          this.smsUrl = `sms:01087696527?body=${number}`
-      } else if (userAgent.search('iphone') > -1 || uagent.search('ipad') > -1) {
-          this.smsUrl = `sms:&body=${number}`
+      const message = document.querySelector("#message");
+      const btn = document.getElementById('button');
+      const email = document.getElementById('email');
+      const form = document.querySelector("#sameNumber");
+      const numberText = document.querySelector("#numberText");
+
+      const sendNumber = () => {
+        message.value = number;
       }
+      sendNumber();
+
+      email.addEventListener('submit', (e) => {
+        e.preventDefault();
+        btn.value = '이메일 전송 중...';
+        const serviceID = 'default_service';
+        const templateID = 'template_wnx585i';
+        emailjs.sendForm(serviceID, templateID, this)
+          .then(() => {
+            btn.value = '인증 번호 전송';
+            alert('이메일을 정상적으로 보냈습니다.');
+          }, (err) => {
+            btn.value = '인증 번호 전송';
+            alert(JSON.stringify(err));
+          });
+      });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const value = Number(numberText.value);
+        if(value === number) {
+          console.log("hi");
+        } else {
+          console.log("틀림");
+        }
+      })
     </script>
   </body>
 </html>
