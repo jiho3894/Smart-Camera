@@ -4,10 +4,6 @@
 <meta charset="UTF-8">
 <title>Slide</title>
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script type="text/javascript">
-  emailjs.init('user_ctcoI2yDQRGZUR9S0APhl')
-</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-signin-client_id" content="1052506175502-tp09gvd9v6rbmbrakhi0e09ssqs16qbb.apps.googleusercontent.com">
 </head>
@@ -27,19 +23,13 @@
       <img class="camera" src="{{ url_for('video_feed') }}">
 
       <!--EmailJs 이메일 인증 보내기-->
-      <form id="email">
-        <div class="field">
-          <input type="hidden"id="from_name" value="김지호님">
-        </div>
-        <div class="field">
-          <input type="hidden"id="to_name" value="스마트 카메라">
-        </div>
-        <div class="field">
-          <input type="hidden"id="message">
-        </div>
-        <input type="submit" id="button" value="인증 번호 전송" >
+      <form id="form">
+        <input type="hidden" name="from_name" id="from_name" value="Smart Camera">
+        <input type="hidden" name="to_name" id="to_name" value="crsn1111">
+        <input type="hidden" name="message" id="message">
+        <input type="submit" id="button" value="Send Email" >
       </form>
-
+      
       <!--이메일로 도착한 번호와 동일하게 입력하였을때
       로그인 성공 파이카메라 확인가능-->
       <form id="sameNumber">
@@ -47,6 +37,10 @@
         <input type="submit"></input>
       </form>
     </header>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      emailjs.init('user_ctcoI2yDQRGZUR9S0APhl')
+    </script>
     <!-- 실시간 시간 표시 JS-->
     <script>
       const clockEvent = document.querySelector(".clock"); 
@@ -64,33 +58,31 @@
     <!-- 이메일 인증 , 인증 확인 절차 JS-->
     <script>
       const number = Math.floor(Math.random() * 9999);
-      const message = document.querySelector("#message");
       const btn = document.getElementById('button');
-      const email = document.getElementById('email');
-      const form = document.querySelector("#sameNumber");
-      const numberText = document.querySelector("#numberText");
+      const sameNumber = document.getElementById('sameNumber');
 
       const sendNumber = () => {
         message.value = number;
       }
       sendNumber();
 
-      email.addEventListener('submit', (e) => {
-        e.preventDefault();
-        btn.value = '이메일 전송 중...';
+      document.getElementById('form')
+      .addEventListener('submit', function(event) {
+        event.preventDefault();
+        btn.value = 'Sending...';
         const serviceID = 'default_service';
-        const templateID = 'template_wnx585i';
-        emailjs.sendForm(serviceID, templateID, email)
+        const templateID = 'template_hefz86s';
+        emailjs.sendForm(serviceID, templateID, this)
           .then(() => {
-            btn.value = '인증 번호 전송';
-            alert('이메일을 정상적으로 보냈습니다.');
+            btn.value = 'Send Email';
+            alert('Sent!');
           }, (err) => {
-            btn.value = '인증 번호 전송';
+            btn.value = 'Send Email';
             alert(JSON.stringify(err));
           });
       });
 
-      form.addEventListener("submit", (e) => {
+      sameNumber.addEventListener("submit", (e) => {
         e.preventDefault();
         const value = Number(numberText.value);
         if(value === number) {
