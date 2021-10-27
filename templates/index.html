@@ -96,12 +96,48 @@
 
   #clock{
     color: blue;
+    text-align: center;
   }
 
   #camera {
-    width: 500px;
-    height: 500px;
-    background-color: green;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+  }
+
+  button {
+    height: 40px;
+    width: 150px;
+    box-shadow:
+      5px 0 15px rgba(255, 255, 255, 0.5),
+      10px 0 30px rgba(70, 70, 70, 0.12);
+    border: 8px solid #ececec;
+    border-radius: 15px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #15e38a;
+    cursor: pointer;
+  }
+
+  button:hover{
+  box-shadow:
+  10px 0 15px rgba(255, 255, 255, 0.5),
+  10px 10px 15px rgba(70, 70, 70, 0.12),
+  inset 10px 10px 15px rgba(255, 255, 255, 0.5),
+  inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+  color: aqua
+  }
+
+  a {
+    text-decoration: none;
+    color: red;
+    text-align: center;
   }
 
   #auth {
@@ -153,6 +189,7 @@
     background: transparent;
     font-size: 30px;
     outline: none;
+    text-align: center;
   }
 
   #numberText2{
@@ -192,15 +229,16 @@
         </div>
       </div>
       <!--현재 시간-->
-      <div class="setCamera">
-        <div id="clock">
-          <h1>2021. 00. 00. 오전 00:00:00</h1>
-          <h2>실시간 감시중</h2>
-        </div>
+      <div id="clock">
+        <h2>2021. 00. 00. 오전 00:00:00</h2>
+        <h3>실시간 감시중</h3>
         <!-- 파이카메라 ( 이메일 인증 성공 시 확인 가능)-->
         <img id="camera" src="{{ url_for('video_feed') }}">
+        <div >
+          <button class="call" onclick="document.location.href='tel:182'"> 
+          <a href="tel:182">즉시 신고하기</a>
+        </div>
       </div>
-
       <!--EmailJs 이메일 인증 보내기-->
       <div id="auth">
         <form id="form">
@@ -225,10 +263,11 @@
     <!-- Style.js -->
     <script>
       const clockEvent = document.querySelector("#clock"); 
-      const clockTitle = clockEvent.querySelector("h1");
+      const clockTitle = clockEvent.querySelector("h2");
       const camera = document.getElementById('camera');
       const loading = document.querySelector('.container');
       const numberText = document.getElementById('numberText');
+      const call = document.querySelector('.call');
 
       numberText.addEventListener('click', () => {
         numberText.value = "";
@@ -240,6 +279,7 @@
       
       clockEvent.style.display = 'none';
       camera.style.display = 'none';
+      call.style.display = 'none';
 
       const getTime = () => {
         setInterval(() => {
@@ -287,6 +327,7 @@
           auth.style.display = "none";
           clockEvent.style.display = 'block';
           camera.style.display = 'block';
+          call.style.display = 'block';
         } else {
           // alert 오류 재 검사
           alert('인증 실패하였습니다. 다시 입력해주세요');
