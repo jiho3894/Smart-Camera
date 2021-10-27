@@ -228,16 +228,15 @@
       const clockTitle = clockEvent.querySelector("h1");
       const camera = document.getElementById('camera');
       const loading = document.querySelector('.container');
-      const sameNumber = document.getElementById('sameNumber');
       const numberText = document.getElementById('numberText');
 
-      sameNumber.addEventListener('click', () => {
+      numberText.addEventListener('click', () => {
         numberText.value = "";
       })
 
       setTimeout(() => {
         loading.style.display = 'none';
-      }, 5000);
+      }, 1);
       
       clockEvent.style.display = 'none';
       camera.style.display = 'none';
