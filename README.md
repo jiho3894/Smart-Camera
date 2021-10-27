@@ -1,20 +1,21 @@
 ![waving](https://capsule-render.vercel.app/api?type=waving&height=200&text=Smart-Security&fontAlign=58&fontAlignY=30&color=gradient)
 
-# 보안 카메라 사이트 리뉴얼 예정 (211021.ver)
-- 사이트 
+# 보안 카메라 사이트 리뉴얼 예정 (211027.ver)
+- 기능 구현 (100% 완료)
+- 스타일링 재구성 예정
+- fullBody xml 파일 실행 예정
 
 # 스마트 보안 카메라
  
  **라즈베리파이 3B+** 를 이용하여 특정 시간 보안이 필요한 공간에서 **비디오 스트리밍**을 하여
  **물체를 인식**하고 인식한 장면을 촬영 후 **이메일로 즉시 발송**하여 상황을 파악할 수 있도록 하고
- 그 장면을 **웹에서 확인이 가능**하도록 제품을 만들었음.
+ 그 장면을 **문자인등을 통한 웹에서 확인이 가능**하도록 제품을 만들었음.
  
  
 ## 바로가기
 - 웹 페이지 https://jiho3894.github.io/Smart-Camera/templates/index.html
 - [사용언어](#5)
 - [main.py](#1)
-- [GPIO](#2)
 - [mail.py](#3)
 - [index.html](#4)
  
@@ -46,33 +47,6 @@ app.config['BASIC_AUTH_FORCE'] = True  #인증 여부
 ```
 ##### Flask 서버 입장시 인증 여부를 물어보는 코드
 ##### 본인의 상황에 따라 자율롭게 수정해주세요.
-# GPIO <a id="2">
-
-<img src="https://user-images.githubusercontent.com/79081800/116015139-4a201b00-a673-11eb-9822-d424116e3e57.png">
-
-
-```python
-pin = GPIO'번호' 에 해당하는 번호  # 상황에 따라 번호 수정
-# pin = 18
-GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(pin, GPIO.OUT)
-servo = GPIO.PWM(pin,50)
-servo.start(0) 
-```
-
-##### 방향 전환에 필요한 카메라 모터 코드입니다 상황에 따라
-##### 핀의 위치를 달리하였을 경우 pin 의 숫자를 변경해주세요
-
-```python
-servo.ChangeDutyCycle(2.5)  # Duty 회적각 0도
-            sleep(10) # delay
-            servo.ChangeDutyCycle(7.5) # Duty 회전각 90도
-            sleep(10)  # delay
-```
-
-##### 모터의 회전 각도 설정입니다 본인의 구역에 맞게
-##### 원하는 회전각과 delay를 설정해주세요
 
 ```python
 if __name__ == '__main__':  # 통신 연결
