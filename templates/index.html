@@ -8,34 +8,56 @@
 <meta name="google-signin-client_id" content="1052506175502-tp09gvd9v6rbmbrakhi0e09ssqs16qbb.apps.googleusercontent.com">
 </head>
 <style>
-  .clock{
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  #clock{
     color: blue;
+  }
+
+  #camera {
+    width: 500px;
+    height: 500px;
+    background-color: green;
+  }
+
+  #auth {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 </style>
   <body>
     <header>
       <!--현재 시간-->
-      <div class="clock">
+      <div id="clock">
         <h1>2021. 00. 00. 오전 00:00:00</h1>
         <h2>실시간 감시중</h2>
       </div>
       <!-- 파이카메라 ( 이메일 인증 성공 시 확인 가능)-->
-      <img class="camera" src="{{ url_for('video_feed') }}">
+      <img id="camera" src="{{ url_for('video_feed') }}">
 
       <!--EmailJs 이메일 인증 보내기-->
-      <form id="form">
-        <input type="hidden" name="from_name" id="from_name" value="Smart Camera">
-        <input type="hidden" name="to_name" id="to_name" value="crsn1111">
-        <input type="hidden" name="message" id="message">
-        <input type="submit" id="button" value="Send Email" >
-      </form>
-      
-      <!--이메일로 도착한 번호와 동일하게 입력하였을때
-      로그인 성공 파이카메라 확인가능-->
-      <form id="sameNumber">
-        <input type="text" id="numberText">
-        <input type="submit"></input>
-      </form>
+      <div id="auth">
+        <form id="form">
+          <input type="hidden" name="from_name" id="from_name" value="Smart Camera">
+          <input type="hidden" name="to_name" id="to_name" value="crsn1111">
+          <input type="hidden" name="message" id="message">
+          <input type="submit" id="button" value="메일 전송하기" >
+        </form>
+        <!--이메일로 도착한 번호와 동일하게 입력하였을때
+        로그인 성공 파이카메라 확인가능-->
+        <form id="sameNumber">
+          <input type="text" id="numberText">
+          <input type="submit"></input>
+        </form>
+      </div>
     </header>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script type="text/javascript">
@@ -43,8 +65,12 @@
     </script>
     <!-- 실시간 시간 표시 JS-->
     <script>
-      const clockEvent = document.querySelector(".clock"); 
+      const clockEvent = document.querySelector("#clock"); 
       const clockTitle = clockEvent.querySelector("h1");
+      const camera = document.getElementById('camera');
+
+      clockEvent.style.display = 'none';
+      camera.style.display = 'none';
 
       const getTime = () => {
         setInterval(() => {
@@ -60,7 +86,8 @@
       const number = Math.floor(Math.random() * 9999);
       const btn = document.getElementById('button');
       const sameNumber = document.getElementById('sameNumber');
-
+      const auth = document.getElementById('auth');
+      console.log(number);
       const sendNumber = () => {
         message.value = number;
       }
@@ -69,13 +96,13 @@
       document.getElementById('form')
       .addEventListener('submit', function(event) {
         event.preventDefault();
-        btn.value = 'Sending...';
+        btn.value = '이메일 전송 중...';
         const serviceID = 'default_service';
         const templateID = 'template_hefz86s';
         emailjs.sendForm(serviceID, templateID, this)
           .then(() => {
-            btn.value = 'Send Email';
-            alert('Sent!');
+            btn.value = '다시 전송하기';
+            alert('전송 완료!');
           }, (err) => {
             btn.value = 'Send Email';
             alert(JSON.stringify(err));
@@ -86,9 +113,14 @@
         e.preventDefault();
         const value = Number(numberText.value);
         if(value === number) {
-          console.log("hi");
+          // 인증 폼 안보이게하기
+          alert('인증에 성공하였습니다.');
+          container.style.display = "none";
+          clockEvent.style.display = 'block';
+          camera.style.display = 'block';
         } else {
-          console.log("틀림");
+          // alert 오류 재 검사
+          alert('인증 실패하였습니다. 다시 입력해주세요');
         }
       })
     </script>
