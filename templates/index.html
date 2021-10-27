@@ -80,7 +80,7 @@
         btn.value = '이메일 전송 중...';
         const serviceID = 'default_service';
         const templateID = 'template_wnx585i';
-        emailjs.sendForm(serviceID, templateID, this)
+        emailjs.sendForm(serviceID, templateID, email)
           .then(() => {
             btn.value = '인증 번호 전송';
             alert('이메일을 정상적으로 보냈습니다.');
