@@ -1,8 +1,6 @@
 ![waving](https://capsule-render.vercel.app/api?type=waving&height=200&text=Smart-Security&fontAlign=58&fontAlignY=30&color=gradient)
 
-# 보안 카메라 사이트 리뉴얼 예정 (211027.ver)
-- 기능 구현 (100% 완료)
-- 스타일링 재구성 예정
+# 보안 카메라 사이트 리뉴얼 예정 (211028.ver)
 - fullBody xml 파일 실행 예정
 
 # 스마트 보안 카메라
