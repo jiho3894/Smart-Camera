@@ -4,14 +4,17 @@ const number = Math.floor(Math.random() * 9999);
 const btn = document.getElementById('button');
 const sameNumber = document.getElementById('sameNumber');
 const auth = document.getElementById('auth');
+const form = document.getElementById('form');
+
 console.log(number);
+
 const sendNumber = () => {
   message.value = number;
 }
 sendNumber();
 
-document.getElementById('form')
-.addEventListener('submit', function(event) {
+//Email.js
+form.addEventListener('submit', function(event) {
   event.preventDefault();
   btn.value = '이메일 전송 중...';
   const serviceID = 'default_service';
@@ -27,6 +30,7 @@ document.getElementById('form')
 });
 
 sameNumber.addEventListener("submit", (e) => {
+  //새로고침 x
   e.preventDefault();
   const value = Number(numberText.value);
   if(value === number) {

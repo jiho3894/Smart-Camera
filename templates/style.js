@@ -12,6 +12,7 @@ numberText.addEventListener('click', () => {
   numberText.value = "";
 })
 
+//로딩창 setTimeout
 setTimeout(() => {
   loading.style.display = 'none';
 }, 5000);

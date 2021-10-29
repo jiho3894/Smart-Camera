@@ -22,9 +22,10 @@
         <h3>실시간 감시중</h3>
         <!-- 파이카메라 ( 이메일 인증 성공 시 확인 가능)-->
         <img id="camera" src="{{ url_for('video_feed') }}">
+        <!-- 모바일 전화 신고 번호 -->
         <div >
           <button class="call" onclick="document.location.href='tel:182'"> 
-          <a href="tel:182">즉시 신고하기</a>
+          <a href="tel:182">즉시 신고</a>
         </div>
       </div>
       <!--EmailJs 이메일 인증 보내기-->
