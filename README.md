@@ -1,8 +1,7 @@
 ![waving](https://capsule-render.vercel.app/api?type=waving&height=200&text=Smart-Security&fontAlign=58&fontAlignY=30&color=gradient)
 
-# 보안 카메라 사이트 리뉴얼 예정 (211028.ver)
-- fullBody xml 파일 실행 예정
-- 신고 문구 '즉시 신고 하기' => '즉시 신고' 로 
+# 보안 카메라 사이트 리뉴얼 예정 (211030.ver)
+- fullBody xml 파일 실행 예정 
 
 # 스마트 보안 카메라
  
