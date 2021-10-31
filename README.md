@@ -1,34 +1,30 @@
-![waving](https://capsule-render.vercel.app/api?type=waving&height=200&text=Smart-Security&fontAlign=58&fontAlignY=30&color=gradient)
+![waving](https://capsule-render.vercel.app/api?type=waving&height=200&text=Smart-Camera&fontAlign=58&fontAlignY=30&color=gradient)
 
-# 보안 카메라 사이트 리뉴얼 예정 (211030.ver)
-- fullBody xml 파일 실행 예정 
-- Readme 최종 개선안 211031까지 
-
-# 스마트 보안 카메라
+# 스마트 카메라
  
- **라즈베리파이 3B+** 를 이용하여 특정 시간 보안이 필요한 공간에서 **비디오 스트리밍**을 하여
+ **라즈베리파이** 를 이용하여 특정 시간 보안이 필요한 공간에서 **비디오 스트리밍**을 하여
  **물체를 인식**하고 인식한 장면을 촬영 후 **이메일로 즉시 발송**하여 상황을 파악할 수 있도록 하고
- 그 장면을 **문자인등을 통한 웹에서 확인이 가능**하도록 제품을 만들었음.
+ 그 장면을 **문자인증을 통한 웹에서 확인이 가능**하도록 제품을 만들었음.
  
  
 ## 바로가기
 - 웹 페이지 https://jiho3894.github.io/Smart-Camera/templates/index.html
-- [사용언어](#5)
-- [main.py](#1)
+- [사용언어](#1)
+- [main.py](#2)
 - [mail.py](#3)
 - [index.html](#4)
  
-## 사용언어 : <a id="5">
+## 사용언어 : <a id="1">
 * HTML 5
 * CSS 3
-* JavaScript (ES5 , ES6)
+* JavaScript
 * Python
 
 ## 그 외 라이브러리 :
 * Open CV [설치 방법](http://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/)
+* Email.JS [사용 방법](https://www.emailjs.com/docs/tutorial/creating-contact-form/)
 * GPIO
 * Flask
-* OAUTH 2.0 [사용 방법](https://developers.google.com/identity/protocols/oauth2)
 
 ## 라즈베리파이 구성도 (그림을 클릭해 확대하세요)
 <img src="https://user-images.githubusercontent.com/79081800/116809699-495b1d80-ab7a-11eb-9242-3a03d544a263.png" width="900" height="550">
@@ -38,14 +34,9 @@
 
 # 사용 방법
  
-# main.py <a id="1">
-```python
-app.config['BASIC_AUTH_USERNAME'] = '아이디'
-app.config['BASIC_AUTH_PASSWORD'] = '비밀번호'
-app.config['BASIC_AUTH_FORCE'] = True  #인증 여부
-```
-##### Flask 서버 입장시 인증 여부를 물어보는 코드
-##### 본인의 상황에 따라 자율롭게 수정해주세요.
+# main.py <a id="2">
+
+## (입장 방법 작성)
 
 ```python
 if __name__ == '__main__':  # 통신 연결
@@ -55,10 +46,10 @@ if __name__ == '__main__':  # 통신 연결
     app.run(host='0.0.0.0', port=포트번호 , debug=False)  # host ip 주소와 포트번호 변경
 ```
 
-##### Flask를 이용한 웹 서버 이동을 위한 코드입니다 고정 ip일 경우
-##### '0.0.0.0'을 본인 ip로 변경해주세요 또한 포트 번호를 고유로 설정할 경우
-##### app.run 코드 안에 (port=포트번호) 를 입력해주세요 
-#### 최종 ip는 라즈베리파이 현 ip를 입력해야합니다
+##### Flask를 이용한 웹 서버 이동을 위한 코드입니다 
+#### 가정에 사용중인 와이파이와 동일 환경에 연결해주시고
+#### 라즈베리에 들어온 와이파이의 ip주소를
+#### 본인이 확인하고 싶은 앱에 입력해주세요
 
 # mail.py <a id="3">
 ```python
@@ -72,10 +63,12 @@ toEmail = '받는 사람 이메일'
 ##### 앱 비밀번호 설정방법은 다음과 같습니다. [앱 비밀번호 만들기](https://support.google.com/accounts/answer/185833?hl=ko)
 
 # index.html <a id="4">
-[실행 과정 확인하기](https://github.com/jiho3894/Smart-Camera/files/6376400/2.pdf)
+[실행 과정 확인하기](https://github.com/jiho3894/Smart-Camera/files/6376400/2.pdf (다시 만들기))
 
 #### 추가 피드백은 아래 이메일로 부탁드립니다
 #### 기타 오류가 있을시에 언제든지 의견을 받고 피드백 해드립니다
 [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:snugyun01@gmail.com)](mailto:crsn1111@gmail.com)
+
+
 
 
