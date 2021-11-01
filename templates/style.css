@@ -27,7 +27,7 @@ background-color: hotpink;
   }
 }
 
-.loader4{
+.loader{
   position: relative;
   width: 150px;
   height: 20px;
@@ -40,7 +40,7 @@ background-color: hotpink;
   background-color: rgba(255,255,255,0.2);
 }
 
-.loader4:before{
+.loader:before{
   content: "";
   position: absolute;
   background-color: #fff;
@@ -52,11 +52,11 @@ background-color: hotpink;
   opacity: 1;
   -webkit-transform-origin:  100% 0%;
       transform-origin:  100% 0% ;
-  -webkit-animation: loader4 5s ease-in-out ;
-      animation: loader4 5s ease-in-out ;
+  -webkit-animation: loader 5s ease-in-out ;
+      animation: loader 5s ease-in-out ;
 }
 
-.loader4:after{
+.loader:after{
   content: "로딩중 ...";
   color: #fff;
   font-family:  Lato,"Helvetica Neue" ;
@@ -70,14 +70,14 @@ background-color: hotpink;
   top: 0;
 }
 
-@-webkit-keyframes loader4{
+@-webkit-keyframes loader{
     0%{width: 0px;}
     70%{width: 100%; opacity: 1;}
     90%{opacity: 0; width: 100%;}
     100%{opacity: 0;width: 0px;}
 }
 
-@keyframes loader4{
+@keyframes loader{
     0%{width: 0px;}
     70%{width: 100%; opacity: 1;}
     90%{opacity: 0; width: 100%;}
