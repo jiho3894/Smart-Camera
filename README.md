@@ -10,9 +10,7 @@
 ## 바로가기
 - 웹 페이지 https://jiho3894.github.io/Smart-Camera/templates/index.html
 - [사용언어](#1)
-- [main.py](#2)
-- [mail.py](#3)
-- [index.html](#4)
+- [사용 방법](#2)
  
 ## 사용언어 : <a id="1">
 * HTML 5
@@ -32,9 +30,34 @@
 ## 웹 구현 구성도 (그림을 클릭해 확대하세요)
 <img src="https://user-images.githubusercontent.com/79081800/114302764-6f564a80-9b05-11eb-9055-6682a97cf69d.jpg">
 
-# 사용 방법
- 
-# main.py <a id="2">
+# 사용 방법 <a id="2">
+
+```javaScript
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  btn.value = '이메일 전송 중...';
+  const serviceID = '서버 ID';
+  const templateID = '템플릿 ID';
+  emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = '다시 전송하기';
+      alert('전송 완료!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
+```
+
+```html
+<!-- 파이카메라 ( 이메일 인증 성공 시 확인 가능)-->
+        <img id="camera" src="{{ url_for('video_feed') }}">
+        <!-- 모바일 전화 신고 번호 -->
+        <div >
+          <button class="call" onclick="document.location.href='tel:182'"> 
+          <a href="tel:182">즉시 신고</a>
+        </div>
+```
 
 ## (입장 방법 작성)
 
@@ -51,7 +74,7 @@ if __name__ == '__main__':  # 통신 연결
 #### 라즈베리에 들어온 와이파이의 ip주소를
 #### 본인이 확인하고 싶은 앱에 입력해주세요
 
-# mail.py <a id="3">
+# mail.py
 ```python
 fromEmail = '보내는 사람 이메일 입력'
 fromEmailPassword = '보내는 사람 이메일의 앱 비밀번호'
@@ -62,13 +85,11 @@ toEmail = '받는 사람 이메일'
 ##### 본인이 수령하고 싶은 이메일을 입력해주세요
 ##### 앱 비밀번호 설정방법은 다음과 같습니다. [앱 비밀번호 만들기](https://support.google.com/accounts/answer/185833?hl=ko)
 
-# index.html <a id="4">
+# index.html
 [실행 과정 확인하기](https://github.com/jiho3894/Smart-Camera/files/6376400/2.pdf (다시 만들기))
 
 #### 추가 피드백은 아래 이메일로 부탁드립니다
 #### 기타 오류가 있을시에 언제든지 의견을 받고 피드백 해드립니다
 [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:snugyun01@gmail.com)](mailto:crsn1111@gmail.com)
-
-
 
 
