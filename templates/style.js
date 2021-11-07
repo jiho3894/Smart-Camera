@@ -21,6 +21,7 @@ clockEvent.style.display = 'none';
 camera.style.display = 'none';
 call.style.display = 'none';
 
+// 실시간 시간 확인
 const getTime = () => {
   setInterval(() => {
     const date = new Date();
