@@ -91,7 +91,7 @@ toEmail = '받는 사람 이메일'
 ##### 앱 비밀번호 설정방법은 다음과 같습니다. [앱 비밀번호 만들기](https://support.google.com/accounts/answer/185833?hl=ko)
 
 # index.html
-[실행 과정 확인하기](https://github.com/jiho3894/Smart-Camera/files/6376400/2.pdf (다시 만들기))
+[실행 과정 확인하기](https://github.com/jiho3894/Smart-Camera/files/7497202/start.pdf)
 
 #### 추가 피드백은 아래 이메일로 부탁드립니다
 #### 기타 오류가 있을시에 언제든지 의견을 받고 피드백 해드립니다
