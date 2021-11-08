@@ -30,7 +30,7 @@
 * Flask
 
 ## 라즈베리파이 구성도 (그림을 클릭해 확대하세요)
-<img src="https://user-images.githubusercontent.com/79081800/116809699-495b1d80-ab7a-11eb-9242-3a03d544a263.png" width="900" height="550">
+<img src="https://user-images.githubusercontent.com/79081800/140742387-33c63733-76a9-4876-9afc-a4bcf8eac7d6.png" width="900" height="550">
 
 ## 웹 구현 구성도 (그림을 클릭해 확대하세요)
 <img src="https://user-images.githubusercontent.com/79081800/114302764-6f564a80-9b05-11eb-9055-6682a97cf69d.jpg">
