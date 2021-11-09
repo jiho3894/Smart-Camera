@@ -1,10 +1,5 @@
 ![waving](https://capsule-render.vercel.app/api?type=waving&height=200&text=Smart-Camera&fontAlign=58&fontAlignY=30&color=gradient)
 
-# 최종 업데이트 수정본(20211108ver)
-- 리드미 최종본 수정(보안중)
-- upperbody 실험 최종 확인(확인중)
-- 하드웨어 
-
 # 스마트 카메라
  
  **라즈베리파이** 를 이용하여 특정 시간 보안이 필요한 공간에서 **비디오 스트리밍**을 하여
@@ -106,8 +101,8 @@ toEmail = '받는 사람 이메일'
 
 
 
-#### 추가 피드백은 아래 이메일로 부탁드립니다
-#### 기타 오류가 있을시에 언제든지 의견을 받고 피드백 해드립니다
+### 추가 피드백은 아래 이메일로 부탁드립니다
+### 기타 오류가 있을시에 언제든지 의견을 받고 피드백 해드립니다
 [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:snugyun01@gmail.com)](mailto:crsn1111@gmail.com)
 
 
