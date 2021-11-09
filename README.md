@@ -36,8 +36,27 @@
 <img src="https://user-images.githubusercontent.com/79081800/114302764-6f564a80-9b05-11eb-9055-6682a97cf69d.jpg">
 
 # 사용 방법 <a id="2">
+ 
+## index.html
+[실행 과정 확인하기](https://github.com/jiho3894/Smart-Camera/files/7497202/start.pdf)
+ 
+```python
+if __name__ == '__main__':  # 통신 연결
+    t = threading.Thread(target=check_for_objects, args=())
+    t.daemon = True
+    t.start()
+    app.run(host='0.0.0.0', port=포트번호 , debug=False)  # host ip 주소와 포트번호 변경
+```
 
+#### Flask를 이용한 웹 서버 이동을 위한 코드입니다 
+#### 가정에 사용중인 와이파이와 동일 환경에 연결해주시고
+#### 라즈베리에 들어온 와이파이의 ip주소를
+#### 본인이 확인하고 싶은 앱에 입력해주세요
+
+ ## Email.JS
 ```javaScript
+const number = Math.floor(Math.random() * 9999);
+ ...
 form.addEventListener('submit', function(event) {
   event.preventDefault();
   btn.value = '이메일 전송 중...';
@@ -53,31 +72,26 @@ form.addEventListener('submit', function(event) {
     });
 });
 ```
+ 
+#### 랜덤 코드 번호를 지정한 이메일로 전송하는 코드
+#### 스마트 카메라 메인 홈페이지 입장전 필수로 인증을 거쳐야함
 
 ```html
-<!-- 파이카메라 ( 이메일 인증 성공 시 확인 가능)-->
+<!--현재 시간-->
+      <div id="clock">
+        <h2>2021. 00. 00. 오전 00:00:00</h2>
+        <h3>실시간 감시중</h3>
+        <!-- 파이카메라 ( 이메일 인증 성공 시 확인 가능)-->
         <img id="camera" src="{{ url_for('video_feed') }}">
         <!-- 모바일 전화 신고 번호 -->
         <div >
           <button class="call" onclick="document.location.href='tel:182'"> 
           <a href="tel:182">즉시 신고</a>
         </div>
+      </div>
 ```
-
-## (입장 방법 작성)
-
-```python
-if __name__ == '__main__':  # 통신 연결
-    t = threading.Thread(target=check_for_objects, args=())
-    t.daemon = True
-    t.start()
-    app.run(host='0.0.0.0', port=포트번호 , debug=False)  # host ip 주소와 포트번호 변경
-```
-
-##### Flask를 이용한 웹 서버 이동을 위한 코드입니다 
-#### 가정에 사용중인 와이파이와 동일 환경에 연결해주시고
-#### 라즈베리에 들어온 와이파이의 ip주소를
-#### 본인이 확인하고 싶은 앱에 입력해주세요
+         
+### 카메라 실시간 확인 사이트 코드 파이카메라, 즉시신고 버튼
 
 # mail.py
 ```python
@@ -90,8 +104,7 @@ toEmail = '받는 사람 이메일'
 ##### 본인이 수령하고 싶은 이메일을 입력해주세요
 ##### 앱 비밀번호 설정방법은 다음과 같습니다. [앱 비밀번호 만들기](https://support.google.com/accounts/answer/185833?hl=ko)
 
-# index.html
-[실행 과정 확인하기](https://github.com/jiho3894/Smart-Camera/files/7497202/start.pdf)
+
 
 #### 추가 피드백은 아래 이메일로 부탁드립니다
 #### 기타 오류가 있을시에 언제든지 의견을 받고 피드백 해드립니다
