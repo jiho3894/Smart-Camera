@@ -10,7 +10,7 @@ import threading
 
 email_update_interval = 10 # 이메일 전송 주기
 video_camera = VideoCamera(flip=True) #카메라 스트리밍
-object_classifier = cv2.CascadeClassifier("models/haarcascade_frontalface_default.xml") # Open CV 파일
+object_classifier = cv2.CascadeClassifier("models/haarcascade_upperbody.xml") # Open CV 파일
 
 app = Flask(__name__) # 서버 입장 데이터값 입력
 last_epoch = 0
