@@ -55,4 +55,4 @@ if __name__ == '__main__':  # 통신 연결
     t = threading.Thread(target=check_for_objects, args=())
     t.daemon = True
     t.start()
-    app.run(host='0.0.0.0', debug=False)
+    app.run(host='0.0.0.0', port=8030, debug=False)
