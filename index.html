@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-signin-client_id" content="1052506175502-tp09gvd9v6rbmbrakhi0e09ssqs16qbb.apps.googleusercontent.com">
+<style>
+  body {
+  padding: 0;
+  margin: 0;
+  background-color: hotpink;
+}
+
+.container{
+width: 100%;
+height: 100vh;
+display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
+background-color: hotpink;
+}
+
+.box{
+  height: 200px;
+  width: 33.3%;
+  transition: all 0.2s ease;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 700px){
+  .box{
+    width: 50%;
+  }
+}
+
+.loader{
+  position: relative;
+  width: 150px;
+  height: 20px;
+  top: 45%;
+  top: -webkit-calc(50% - 10px);
+  top: calc(50% - 10px);
+  left: 25%;
+  left: -webkit-calc(50% - 75px);
+  left: calc(50% - 75px);
+  background-color: rgba(255,255,255,0.2);
+}
+
+.loader:before{
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  top: 0px;
+  left: 0px;
+  height: 20px;
+  width: 0px;
+  z-index: 0;
+  opacity: 1;
+  -webkit-transform-origin:  100% 0%;
+      transform-origin:  100% 0% ;
+  -webkit-animation: loader 5s ease-in-out ;
+      animation: loader 5s ease-in-out ;
+}
+
+.loader:after{
+  content: "로딩중 ...";
+  color: #fff;
+  font-family:  Lato,"Helvetica Neue" ;
+  font-weight: 200;
+  font-size: 16px;
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  left: 0;
+  top: 0;
+}
+
+@-webkit-keyframes loader{
+    0%{width: 0px;}
+    70%{width: 100%; opacity: 1;}
+    90%{opacity: 0; width: 100%;}
+    100%{opacity: 0;width: 0px;}
+}
+
+@keyframes loader{
+    0%{width: 0px;}
+    70%{width: 100%; opacity: 1;}
+    90%{opacity: 0; width: 100%;}
+    100%{opacity: 0;width: 0px;}
+}
+
+#clock{
+  color: blue;
+  text-align: center;
+}
+
+#camera {
+  width: 400px;
+  height: 400px;
+  margin: auto;
+}
+
+button {
+  height: 40px;
+  width: 150px;
+  box-shadow:
+    5px 0 15px rgba(255, 255, 255, 0.5),
+    10px 0 30px rgba(70, 70, 70, 0.12);
+  border: 8px solid #ececec;
+  border-radius: 15px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #15e38a;
+  cursor: pointer;
+}
+
+button:hover{
+box-shadow:
+10px 0 15px rgba(255, 255, 255, 0.5),
+10px 10px 15px rgba(70, 70, 70, 0.12),
+inset 10px 10px 15px rgba(255, 255, 255, 0.5),
+inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+color: aqua
+}
+
+a {
+  text-decoration: none;
+  color: red;
+  text-align: center;
+}
+
+#auth {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#button {
+  height: 40px;
+  width: 150px;
+  box-shadow:
+    5px 0 15px rgba(255, 255, 255, 0.5),
+    10px 0 30px rgba(70, 70, 70, 0.12);
+  border: 8px solid #ececec;
+  border-radius: 15px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 10px 10px auto;
+  font-size: 18px;
+  font-weight: 600;
+  color: #15e38a;
+  cursor: pointer;
+}
+
+#button:hover{
+box-shadow:
+10px 0 15px rgba(255, 255, 255, 0.5),
+10px 10px 15px rgba(70, 70, 70, 0.12),
+inset 10px 10px 15px rgba(255, 255, 255, 0.5),
+inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+color: aqua
+}
+
+
+#numberText {
+  width: 150px;
+  height: 50px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px solid black;
+  background: transparent;
+  font-size: 30px;
+  outline: none;
+  text-align: center;
+}
+
+#numberText2{
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border: 0;
+  box-shadow:
+    5px 0 15px rgba(255, 255, 255, 0.5),
+    10px 0 30px rgba(70, 70, 70, 0.12);
+  outline: none;
+  margin: 10px 10px 10px auto;
+  font-size: 18px;
+  font-weight: 600;
+  color: #15e38a;
+  cursor: pointer;
+}
+
+#numberText2:hover{
+  box-shadow:
+  10px 0 15px rgba(255, 255, 255, 0.5),
+  10px 10px 15px rgba(70, 70, 70, 0.12),
+  inset 10px 10px 15px rgba(255, 255, 255, 0.5),
+  inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+  color: aqua
+}
+</style>
+</head>
+  <body>
+    <header>
+      <!--로딩창-->
+      <div class="container">
+        <div class="box">
+          <div class="loader"></div>
+        </div>
+      </div>
+      <!--카메라 폼-->
+      <div id="clock">
+        <!--현재 시간-->
+        <h2>2021. 00. 00. 오전 00:00:00</h2>
+        <h3>실시간 감시중</h3>
+        <!-- 파이카메라 ( 이메일 인증 성공 시 확인 가능)-->
+        <img id="camera" src="{{ url_for('video_feed') }}">
+        <!-- 모바일 전화 신고 번호 -->
+        <div >
+          <button class="call" onclick="document.location.href='tel:182'"> 
+          <a href="tel:182">즉시 신고</a>
+        </div>
+      </div>
+      <!--EmailJs 이메일 인증 보내기-->
+      <div id="auth">
+        <form id="form">
+          <input type="hidden" name="from_name" id="from_name" value="Smart Camera">
+          <input type="hidden" name="to_name" id="to_name" value="crsn1111">
+          <input type="hidden" name="message" id="message">
+          <input type="submit" id="button" value="메일 전송하기" >
+        </form>
+        <!--이메일로 도착한 번호와 동일하게 입력하였을때
+        로그인 성공 파이카메라 확인가능-->
+        <form id="sameNumber">
+          <input type="text" id="numberText" value="인증번호">
+          <input type="submit" id="numberText2" value="확인"></input>
+        </form>
+      </div>
+    </header>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      emailjs.init('user_ctcoI2yDQRGZUR9S0APhl')
+    </script>
+    <script>
+      /*실시간 시간 표시 JS
+      Style.js*/
+
+      const clockEvent = document.querySelector("#clock"); 
+      const clockTitle = clockEvent.querySelector("h2");
+      const camera = document.getElementById('camera');
+      const loading = document.querySelector('.container');
+      const numberText = document.getElementById('numberText');
+      const call = document.querySelector('.call');
+
+      numberText.addEventListener('click', () => {
+        numberText.value = "";
+      })
+
+      //로딩창 setTimeout
+      setTimeout(() => {
+        loading.style.display = 'none';
+      }, 5000);
+
+      clockEvent.style.display = 'none';
+      camera.style.display = 'none';
+      call.style.display = 'none';
+
+      // 실시간 시간 확인
+      const getTime = () => {
+        setInterval(() => {
+          const date = new Date();
+          const day = date.toLocaleString();
+          clockTitle.innerHTML = `${day}`;
+        }, 1000);
+      }
+      getTime();
+    </script>
+    <script>
+      /* 이메일 인증 , 인증 확인 절차 JS */
+      // 보안문자 변수
+      const number = Math.floor(Math.random() * 9999);
+
+      const btn = document.getElementById('button');
+      const sameNumber = document.getElementById('sameNumber');
+      const auth = document.getElementById('auth');
+      const form = document.getElementById('form');
+
+      //임시 확인용 보안문자
+      console.log(number);
+
+      const sendNumber = () => {
+        message.value = number;
+      }
+      sendNumber();
+
+      //Email.js
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        btn.value = '이메일 전송 중...';
+        const serviceID = 'default_service';
+        const templateID = 'template_hefz86s';
+        emailjs.sendForm(serviceID, templateID, this)
+          .then(() => {
+            btn.value = '다시 전송하기';
+            alert('전송 완료!');
+          }, (err) => {
+            btn.value = 'Send Email';
+            alert(JSON.stringify(err));
+          });
+      });
+
+      sameNumber.addEventListener("submit", (e) => {
+        //새로고침 x
+        e.preventDefault();
+        const value = Number(numberText.value);
+        if(value === number) {
+          // 인증 폼 안보이게하기
+          alert('인증에 성공하였습니다.');
+          auth.style.display = "none";
+          clockEvent.style.display = 'block';
+          camera.style.display = 'block';
+          call.style.display = 'block';
+        } else {
+          // alert 오류 재 검사
+          alert('인증 실패하였습니다. 다시 입력해주세요');
+        }
+      });
+    </script>
+  </body>
+</html>
