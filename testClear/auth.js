@@ -43,7 +43,6 @@ sameNumber.addEventListener("submit", (e) => {
     clockEvent.style.display = 'block';
     camera.style.display = 'block';
     call.style.display = 'block';
-    navBar.style.width = "66%";
   } else {
     // alert 오류 재 검사
     alert('인증 실패하였습니다. 다시 입력해주세요');

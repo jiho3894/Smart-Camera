@@ -1,127 +1,169 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: hotpink;
+  background-color: #fff;
 }
 
-.container{
-width: 100%;
-height: 100vh;
-display: flex;
-justify-content: center;
-text-align: center;
-align-items: center;
-background-color: hotpink;
+li {
+  list-style: none;
+}
+
+.loadingPage{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 
 .box{
   height: 200px;
-  width: 33.3%;
   transition: all 0.2s ease;
-}
-
-/* MEDIA QUERIES */
-@media (max-width: 700px){
-  .box{
-    width: 50%;
-  }
 }
 
 .loader{
   position: relative;
-  width: 150px;
-  height: 20px;
-  top: 45%;
-  top: -webkit-calc(50% - 10px);
-  top: calc(50% - 10px);
-  left: 25%;
-  left: -webkit-calc(50% - 75px);
-  left: calc(50% - 75px);
-  background-color: rgba(255,255,255,0.2);
+  width: 300px;
+  height: 45px;
+  background: silver;
+  font-size: 15px;
+  line-height: 1.5;
+  border: 0;
+  border-radius: 15px;
 }
 
 .loader:before{
   content: "";
   position: absolute;
-  background-color: #fff;
+  background-color: aqua;
+  border-radius: 15px;
   top: 0px;
   left: 0px;
-  height: 20px;
+  height: 45px;
   width: 0px;
   z-index: 0;
   opacity: 1;
   -webkit-transform-origin:  100% 0%;
       transform-origin:  100% 0% ;
-  -webkit-animation: loader 5s ease-in-out ;
-      animation: loader 5s ease-in-out ;
+  -webkit-animation: loader 4s ease-in-out ;
+      animation: loader 4s ease-in-out ;
 }
 
 .loader:after{
   content: "로딩중 ...";
-  color: #fff;
+  color: black;
   font-family:  Lato,"Helvetica Neue" ;
-  font-weight: 200;
-  font-size: 16px;
+  font-weight: 500;
+  font-size: 30px;
   position: absolute;
   width: 100%;
   height: 20px;
-  line-height: 20px;
   left: 0;
   top: 0;
 }
 
 @-webkit-keyframes loader{
     0%{width: 0px;}
-    70%{width: 100%; opacity: 1;}
-    90%{opacity: 0; width: 100%;}
-    100%{opacity: 0;width: 0px;}
+    100%{opacity: 1; width: 100%;}
 }
 
 @keyframes loader{
     0%{width: 0px;}
-    70%{width: 100%; opacity: 1;}
-    90%{opacity: 0; width: 100%;}
-    100%{opacity: 0;width: 0px;}
+    100%{opacity: 1; width: 100%;}
 }
+
+
+
+/* 이용약관 이메일 페이지 */
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner_container {
+  width: 550px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  width: inherit;
+  height: 70px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+main {
+  width: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 550px;
+}
+
+.main {
+  padding: 40px;
+}
+
+.navigation {
+  width: inherit;
+  height: 5px;
+  background: red;
+}
+
+.navigation_bar {
+  width: 0;
+  height: 5px;
+  background: green;
+}
+
+.form_p {
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form_btn {
+  width: inherit;
+  height: 45px;
+  background: #fee500;
+  margin-top: 40px;
+}
+
+.form_btn button:hover {
+  background: #f1d900;
+}
+
+.form_btn button {
+  width: 100%;
+  height: 45px;
+  background: #fee500;
+  font-size: 15px;
+  line-height: 1.5;
+  border: 0;
+  border-radius: 4px;
+}
+
+/* 메인 페이지 */
 
 #clock{
   color: blue;
   text-align: center;
+  width: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 550px;
 }
 
 #camera {
   width: 400px;
   height: 400px;
   margin: auto;
-}
-
-button {
-  height: 40px;
-  width: 150px;
-  box-shadow:
-    5px 0 15px rgba(255, 255, 255, 0.5),
-    10px 0 30px rgba(70, 70, 70, 0.12);
-  border: 8px solid #ececec;
-  border-radius: 15px;
-  outline: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  margin-top: 10px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #15e38a;
-  cursor: pointer;
-}
-
-button:hover{
-box-shadow:
-10px 0 15px rgba(255, 255, 255, 0.5),
-10px 10px 15px rgba(70, 70, 70, 0.12),
-inset 10px 10px 15px rgba(255, 255, 255, 0.5),
-inset 10px 10px 15px rgba(70, 70, 70, 0.12);
-color: aqua
 }
 
 a {
@@ -131,43 +173,14 @@ a {
 }
 
 #auth {
-  width: 100%;
-  height: 100%;
-  position: fixed;
+  width: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 550px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
-#button {
-  height: 40px;
-  width: 150px;
-  box-shadow:
-    5px 0 15px rgba(255, 255, 255, 0.5),
-    10px 0 30px rgba(70, 70, 70, 0.12);
-  border: 8px solid #ececec;
-  border-radius: 15px;
-  outline: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 10px 10px 10px auto;
-  font-size: 18px;
-  font-weight: 600;
-  color: #15e38a;
-  cursor: pointer;
-}
-
-#button:hover{
-box-shadow:
-10px 0 15px rgba(255, 255, 255, 0.5),
-10px 10px 15px rgba(70, 70, 70, 0.12),
-inset 10px 10px 15px rgba(255, 255, 255, 0.5),
-inset 10px 10px 15px rgba(70, 70, 70, 0.12);
-color: aqua
-}
-
 
 #numberText {
   width: 150px;
@@ -180,32 +193,4 @@ color: aqua
   font-size: 30px;
   outline: none;
   text-align: center;
-}
-
-#numberText2{
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border: 0;
-  box-shadow:
-    5px 0 15px rgba(255, 255, 255, 0.5),
-    10px 0 30px rgba(70, 70, 70, 0.12);
-  outline: none;
-  margin: 10px 10px 10px auto;
-  font-size: 18px;
-  font-weight: 600;
-  color: #15e38a;
-  cursor: pointer;
-}
-
-#numberText2:hover{
-  box-shadow:
-  10px 0 15px rgba(255, 255, 255, 0.5),
-  10px 10px 15px rgba(70, 70, 70, 0.12),
-  inset 10px 10px 15px rgba(255, 255, 255, 0.5),
-  inset 10px 10px 15px rgba(70, 70, 70, 0.12);
-  color: aqua
 }
