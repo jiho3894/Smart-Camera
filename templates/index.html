@@ -9,114 +9,120 @@
 <meta name="google-signin-client_id" content="1052506175502-tp09gvd9v6rbmbrakhi0e09ssqs16qbb.apps.googleusercontent.com">
 </head>
   <body>
-      <!--로딩창-->
-      <div class="loadingPage">
-        <div class="box">
-          <div class="loader">
-          </div>
+    <!--로딩창-->
+    <div class="loadingPage">
+      <div class="box">
+        <div class="loader">
         </div>
       </div>
-
-      <!--인증폼-->
-      <div class="container">
-        <div class="inner_container">
-          <header class="header">smart-security</header>
-          <div class="navigation">
-            <div class="navigation_bar"></div>
+    </div>
+    <!--인증폼-->
+    <div class="container">
+      <div class="inner_container">
+        <header class="header">smart-security</header>
+        <div class="navigation">
+          <div class="navigation_bar"></div>
+        </div>
+        <main>
+          <div class="main">
+            <h2>
+              스마트보안 계정
+              <br>
+              서비스 약관에 동의해 주세요.
+            </h2>
+            <form>
+              <div class="checkAll" role="checkbox">
+                <input  type="checkbox"value="true">
+                <label>
+                  <span></span>
+                  모두 동의합니다.
+                </label>
+              </div>
+                <p class="form_p">
+                  전체 동의는 필수 및 선택정보에 대한 동의도 포함되어 있으며, 개별적으로도 동의를 선택하실 수 있습니다.
+                  <br>
+                  선택항목에 대한 동의를 거부하시는 경우에도 서비스는 이용이 가능합니다.
+                </p>
+              <strong>
+                동의 항목
+              </strong>
+              <ul>
+                <li>
+                  <div class="checkOne" role="checkbox">
+                    <input type="checkbox" value="true">
+                    <label>
+                      <span></span>
+                      가입자 본인입니다.
+                    </label>
+                  </div>
+                </li>
+                <li>
+                  <div class="checkTwo" role="checkbox">
+                    <input type="checkbox" value="true">
+                    <label>
+                      <span></span>
+                      [필수] 사용법을 정독하였습니다.
+                    </label>
+                  </div>
+                </li>
+                <li>
+                  <div class="checkThree" role="checkbox">
+                    <input type="checkbox" value="true">
+                    <label>
+                      <span></span>
+                      [선택] 개인정보 추가 수집 동의
+                    </label>
+                  </div>
+                </li>
+              </ul>
+              <div class="form_btn">
+                <button disabled>동의</button>
+              </div>
+            </form>
           </div>
-          <main>
-            <div class="main">
-              <h3>
-                스마트보안 계정
-                <br>
-                서비스 약관에 동의해 주세요.
-              </h3>
-              <form>
-                <div class="checkAll" role="checkbox">
-                  <input  type="checkbox"value="true">
-                  <label>
-                    <span></span>
-                    모두 동의합니다.
-                  </label>
-                </div>
-                  <p class="form_p">
-                    전체 동의는 필수 및 선택정보에 대한 동의도 포함되어 있으며, 개별적으로도 동의를 선택하실 수 있습니다.
-                    <br>
-                    선택항목에 대한 동의를 거부하시는 경우에도 서비스는 이용이 가능합니다.
-                  </p>
-                <strong>
-                  동의 항목
-                </strong>
-                <ul>
-                  <li>
-                    <div class="checkOne" role="checkbox">
-                      <input type="checkbox" value="true">
-                      <label>
-                        <span></span>
-                        가입자 본인입니다.
-                      </label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkTwo" role="checkbox">
-                      <input type="checkbox" value="true">
-                      <label>
-                        <span></span>
-                        [필수] 사용법을 정독하였습니다.
-                      </label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkThree" role="checkbox">
-                      <input type="checkbox" value="true">
-                      <label>
-                        <span></span>
-                        [선택] 개인정보 추가 수집 동의
-                      </label>
-                    </div>
-                  </li>
-                </ul>
-                <div class="form_btn">
-                  <button>동의</button>
-                </div>
-              </form>
-            </div>
-          </main>
-          <!--EmailJs 이메일 인증 보내기-->
-          <div id="auth">
+        </main>
+        <!--EmailJs 이메일 인증 보내기-->
+        <div id="auth">
+          <div class="main">
+            <h2>
+              본인 확인을 위해
+              <br>
+              등록한 이메일로 인증을 진행해 주세요.
+            </h2>
             <form id="form">
               <input type="hidden" name="from_name" id="from_name" value="Smart Camera">
               <input type="hidden" name="to_name" id="to_name" value="crsn1111">
               <input type="hidden" name="message" id="message">
-              <input type="submit" id="button" value="메일 전송하기" >
+              <input required type="text" id="numberText" value="인증번호 입력">
+              <input type="submit" id="button" value=" 메일 전송하기 " >
             </form>
             <!--이메일로 도착한 번호와 동일하게 입력하였을때
             로그인 성공 파이카메라 확인가능-->
             <form id="sameNumber">
-              <input type="text" id="numberText" value="인증번호">
-              <input type="submit" id="numberText2" value="확인"></input>
+              <input type="submit" id="numberText2" value="다음"></input>
             </form>
           </div>
-          <!--카메라 폼-->
-          <div id="clock">
-            <!--현재 시간-->
-            <h2>2021. 00. 00. 오전 00:00:00</h2>
-            <h3>실시간 감시중</h3>
-            <!-- 파이카메라 ( 이메일 인증 성공 시 확인 가능)-->
-            <img id="camera" src="{{ url_for('video_feed') }}">
-            <!-- 모바일 전화 신고 번호 -->
-            <div >
-              <button class="call" onclick="document.location.href='tel:182'"> 
-              <a href="tel:182">즉시 신고</a>
-            </div>
-          </div>
-          <footer class="foooter" style="margin-top: 20px;">
-            <small>
-              Copyright © Jiho3894 Corp. All rights reserved.
-            </small>
-          </footer>
         </div>
+        <!--카메라 폼-->
+        <div id="clock">
+          <!--현재 시간-->
+          <h2>2021. 00. 00. 오전 00:00:00</h2>
+          <h3>실시간 감시중</h3>
+          <!-- 파이카메라 ( 이메일 인증 성공 시 확인 가능)-->
+          <img id="camera" src="{{ url_for('video_feed') }}">
+          <!-- 모바일 전화 신고 번호 -->
+          <div >
+            <button class="call" onclick="document.location.href='tel:182'"> 
+            <a href="tel:182">즉시 신고</a>
+          </div>
+        </div>
+        <footer class="foooter" style="margin-top: 20px;">
+          <small>
+            Copyright © Jiho3894 Corp. All rights reserved.
+          </small>
+        </footer>
       </div>
+    </div>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script type="text/javascript">
       emailjs.init('user_ctcoI2yDQRGZUR9S0APhl')

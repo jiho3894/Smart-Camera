@@ -11,6 +11,7 @@ const container = document.querySelector('.container');
 
 numberText.addEventListener('click', () => {
   numberText.value = "";
+  numberText.style.opacity = 1;
 })
 
 setTimeout(() => {
@@ -24,12 +25,6 @@ setTimeout(() => {
   loading.style.display = 'none';
   container.style.display = 'flex';
 }, 5000);
-
-
-/*지워야하는것*/
-
-
-
 
 container.style.display = 'none';
 auth.style.display = 'none';

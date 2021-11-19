@@ -19,7 +19,7 @@ sendNumber();
 //Email.js
 form.addEventListener('submit', function(event) {
   event.preventDefault();
-  btn.value = '이메일 전송 중...';
+  btn.value = '이메일 전송 중';
   const serviceID = 'default_service';
   const templateID = 'template_hefz86s';
   emailjs.sendForm(serviceID, templateID, this)
@@ -43,7 +43,7 @@ sameNumber.addEventListener("submit", (e) => {
     clockEvent.style.display = 'block';
     camera.style.display = 'block';
     call.style.display = 'block';
-    navBar.style.width = "66%";
+    navBar.style.width = "100%";
   } else {
     // alert 오류 재 검사
     alert('인증 실패하였습니다. 다시 입력해주세요');

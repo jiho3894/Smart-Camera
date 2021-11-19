@@ -2,6 +2,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: #fff;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 li {
@@ -136,14 +137,15 @@ main {
   margin-top: 40px;
 }
 
-.form_btn button:hover {
+/* .form_btn button:hover {
   background: #f1d900;
-}
+} */
 
 .form_btn button {
   width: 100%;
   height: 45px;
-  background: #fee500;
+  color: #191919;
+  background-color: #f6f6f6;
   font-size: 15px;
   line-height: 1.5;
   border: 0;
@@ -182,15 +184,51 @@ a {
   justify-content: center;
 }
 
+#form {
+  padding-bottom: 6px;
+  border-bottom: 2px solid silver;
+}
+
 #numberText {
-  width: 150px;
-  height: 50px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 3px solid black;
+  width: 320px;
+  line-height: 42px;
+  border: none;
   background: transparent;
-  font-size: 30px;
+  font-size: 18px;
+  outline: none;
+  
+  opacity: 0.6;
+}
+
+#button {
+  cursor: pointer;
+  width: 140px;
+  line-height: 38px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  background: transparent;
+  font-size: 16px;
   outline: none;
   text-align: center;
+}
+
+#sameNumber {
+  width: inherit;
+  height: 45px;
+  background: #fee500;
+  margin-top: 40px;
+}
+
+#sameNumber input:hover {
+  background: #f1d900;
+}
+
+#sameNumber input {
+  width: 100%;
+  height: 45px;
+  background: #fee500;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 0;
+  border-radius: 4px;
 }
