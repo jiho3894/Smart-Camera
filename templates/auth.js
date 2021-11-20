@@ -41,8 +41,6 @@ sameNumber.addEventListener("submit", (e) => {
     alert('인증에 성공하였습니다.');
     auth.style.display = "none";
     clockEvent.style.display = 'block';
-    camera.style.display = 'block';
-    call.style.display = 'block';
     navBar.style.width = "100%";
   } else {
     // alert 오류 재 검사

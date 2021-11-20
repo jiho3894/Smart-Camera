@@ -2,12 +2,26 @@
 Style.js*/
 const clockEvent = document.querySelector("#clock"); 
 const clockTitle = clockEvent.querySelector("h2");
-const camera = document.getElementById('camera');
 const loading = document.querySelector('.loadingPage');
 const loader = document.querySelector('.loader');
 const numberText = document.getElementById('numberText');
-const call = document.querySelector('.call');
 const container = document.querySelector('.container');
+const full = document.querySelector('.full');
+const cameraFull = document.querySelector('#camera_full');
+const backScreen = document.querySelector('.backScreen');
+
+//카메라 확대
+full.addEventListener('click', () => {
+  cameraFull.style.display = "flex";
+  clockEvent.style.display = 'none';
+  container.style.display = 'none';
+})
+
+backScreen.addEventListener('click', () =>{
+  cameraFull.style.display = "none";
+  clockEvent.style.display = '';
+  container.style.display = 'flex';
+})
 
 numberText.addEventListener('click', () => {
   numberText.value = "";
@@ -26,11 +40,10 @@ setTimeout(() => {
   container.style.display = 'flex';
 }, 5000);
 
+
 container.style.display = 'none';
 auth.style.display = 'none';
 clockEvent.style.display = 'none';
-camera.style.display = 'none';
-call.style.display = 'none';
 
 // 실시간 시간 확인
 const getTime = () => {

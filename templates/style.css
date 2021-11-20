@@ -9,6 +9,7 @@ li {
   list-style: none;
 }
 
+/* 로딩창 */
 .loadingPage{
   width: 100%;
   height: 100vh;
@@ -76,7 +77,7 @@ li {
 
 
 
-/* 이용약관 이메일 페이지 */
+/* 이용약관 동의 페이지 */
 .container {
   width: 100%;
   height: 100vh;
@@ -152,28 +153,7 @@ main {
   border-radius: 4px;
 }
 
-/* 메인 페이지 */
-
-#clock{
-  color: blue;
-  text-align: center;
-  width: inherit;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  height: 550px;
-}
-
-#camera {
-  width: 400px;
-  height: 400px;
-  margin: auto;
-}
-
-a {
-  text-decoration: none;
-  color: red;
-  text-align: center;
-}
-
+/* 이용약관 이메일 인증 페이지 */
 #auth {
   width: inherit;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -232,3 +212,61 @@ a {
   border: 0;
   border-radius: 4px;
 }
+
+/* 메인 카메라 페이지 */
+
+#clock{
+  text-align: center;
+  width: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 550px;
+}
+
+#camera {
+  width: 400px;
+  height: 400px;
+}
+
+#camera_btn {
+  margin-top: 20px;
+}
+
+.call {
+  cursor: pointer;
+  width: 150px;
+  height: 30px;
+  background: #fee500;
+  margin-right: 10px;
+  border: 0;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: red;
+  text-align: center;
+}
+
+/* 카메라 전체화면 폼*/
+#camera_full {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+}
+
+#camera_full .backScreen {
+  background-color: green;
+  width: 3vw;
+  height: 100vh;
+}
+
+#camera_full .fullScreen {
+  background-color: silver;
+  width: 97vw;
+  height: 100vh;
+}
+
+
+

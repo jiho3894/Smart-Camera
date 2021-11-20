@@ -7,6 +7,17 @@ const btnCon = document.querySelector(".form_btn button");
 const main = document.querySelector("main");
 const navBar = document.querySelector(".navigation_bar");
 
+const check = () => {
+  checkAll.checked = false,
+  check1.checked = false ,
+  check2.checked = false ,
+  check3.checked = false,
+  btnCon.disabled = true,
+  btnCon.style.background = "#f6f6f6",
+  btnCon.style.color = "#191919",
+  btnCon.style.cursor = "pointer"
+}
+
 button.addEventListener("click", (e) => {
   e.preventDefault();
   if(check1.checked === true && check2.checked === true) {
@@ -38,24 +49,10 @@ checkAll.addEventListener("click", () => {
       btnCon.style.cursor = "pointer"
       )
       : (
-      checkAll.checked = false,
-      check1.checked = false ,
-      check2.checked = false ,
-      check3.checked = false,
-      btnCon.disabled = true,
-      btnCon.style.background = "#f6f6f6",
-      btnCon.style.color = "#191919",
-      btnCon.style.cursor = "pointer"
+      check()
       )
   } else {
-    checkAll.checked = false,
-    check1.checked = false ,
-    check2.checked = false ,
-    check3.checked = false,
-    btnCon.disabled = true,
-    btnCon.style.background = "#f6f6f6",
-    btnCon.style.color = "#191919",
-    btnCon.style.cursor = "pointer"
+    check()
   }
 });
 

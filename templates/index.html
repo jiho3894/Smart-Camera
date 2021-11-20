@@ -107,21 +107,28 @@
         <div id="clock">
           <!--현재 시간-->
           <h2>2021. 00. 00. 오전 00:00:00</h2>
-          <h3>실시간 감시중</h3>
           <!-- 파이카메라 ( 이메일 인증 성공 시 확인 가능)-->
           <img id="camera" src="{{ url_for('video_feed') }}">
           <!-- 모바일 전화 신고 번호 -->
-          <div >
-            <button class="call" onclick="document.location.href='tel:182'"> 
+          <div id="camera_btn">
+            <button class="call" onclick="document.location.href='tel:182'" /> 
             <a href="tel:182">즉시 신고</a>
+            <button class="call full">
+              <span>전체 화면</span>
+            </button> 
           </div>
         </div>
         <footer class="foooter" style="margin-top: 20px;">
           <small>
-            Copyright © Jiho3894 Corp. All rights reserved.
+            Copyright © 2021 Corp. All rights reserved by Jiho3894
           </small>
         </footer>
       </div>
+    </div>
+    <div id="camera_full">
+      <button class="backScreen">
+      </button>
+      <img class="fullScreen" src="{{ url_for('video_feed') }}">
     </div>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script type="text/javascript">
