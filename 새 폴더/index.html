@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>smart-security</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-signin-client_id" content="1052506175502-tp09gvd9v6rbmbrakhi0e09ssqs16qbb.apps.googleusercontent.com">
+<style>
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+/* 로딩창 */
+.loadingPage{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.box{
+  height: 200px;
+  transition: all 0.2s ease;
+}
+
+.loader{
+  position: relative;
+  width: 300px;
+  height: 45px;
+  background: silver;
+  font-size: 15px;
+  line-height: 1.5;
+  border: 0;
+  border-radius: 15px;
+}
+
+.loader:before{
+  content: "";
+  position: absolute;
+  background-color: aqua;
+  border-radius: 15px;
+  top: 0px;
+  left: 0px;
+  height: 45px;
+  width: 0px;
+  z-index: 0;
+  opacity: 1;
+  -webkit-transform-origin:  100% 0%;
+      transform-origin:  100% 0% ;
+  -webkit-animation: loader 4s ease-in-out ;
+      animation: loader 4s ease-in-out ;
+}
+
+.loader:after{
+  content: "로딩중 ...";
+  color: black;
+  font-family:  Lato,"Helvetica Neue" ;
+  font-weight: 500;
+  font-size: 30px;
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  left: 0;
+  top: 0;
+}
+
+@-webkit-keyframes loader{
+    0%{width: 0px;}
+    100%{opacity: 1; width: 100%;}
+}
+
+@keyframes loader{
+    0%{width: 0px;}
+    100%{opacity: 1; width: 100%;}
+}
+
+/* 이용약관 동의 페이지 */
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner_container {
+  width: 550px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  width: inherit;
+  height: 70px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+main {
+  width: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 550px;
+}
+
+.main {
+  padding: 40px;
+}
+
+.navigation {
+  width: inherit;
+  height: 5px;
+  background: red;
+}
+
+.navigation_bar {
+  width: 0;
+  height: 5px;
+  background: green;
+}
+
+.form_p {
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form_btn {
+  width: inherit;
+  height: 45px;
+  background: #fee500;
+  margin-top: 40px;
+}
+
+/* .form_btn button:hover {
+  background: #f1d900;
+} */
+
+.form_btn button {
+  width: 100%;
+  height: 45px;
+  color: #191919;
+  background-color: #f6f6f6;
+  font-size: 15px;
+  line-height: 1.5;
+  border: 0;
+  border-radius: 4px;
+}
+
+/* 이용약관 이메일 인증 페이지 */
+#auth {
+  width: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#form {
+  padding-bottom: 6px;
+  border-bottom: 2px solid silver;
+}
+
+#numberText {
+  width: 320px;
+  line-height: 42px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  outline: none;
+  opacity: 0.6;
+}
+
+#button {
+  cursor: pointer;
+  width: 140px;
+  line-height: 38px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+  text-align: center;
+}
+
+#sameNumber {
+  width: inherit;
+  height: 45px;
+  background: #fee500;
+  margin-top: 40px;
+}
+
+#sameNumber input:hover {
+  background: #f1d900;
+}
+
+#sameNumber input {
+  width: 100%;
+  height: 45px;
+  background: #fee500;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 0;
+  border-radius: 4px;
+}
+
+/* 메인 카메라 페이지 */
+
+#clock{
+  text-align: center;
+  width: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 550px;
+}
+
+#camera {
+  width: 400px;
+  height: 400px;
+}
+
+#camera_btn {
+  margin-top: 20px;
+}
+
+.call {
+  cursor: pointer;
+  width: 150px;
+  height: 30px;
+  background: #fee500;
+  margin-right: 10px;
+  border: 0;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: red;
+  text-align: center;
+}
+
+/* 카메라 전체화면 폼*/
+#camera_full {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+}
+
+#camera_full .backScreen {
+  background-color: green;
+  width: 5vw;
+  height: 100vh;
+}
+
+#camera_full .fullScreen {
+  width: 95vw;
+  height: 100vh;
+}
+
+#camera_full .screenBox {
+  position: fixed;
+  right: 0;
+  background-color: slategrey;
+  width: 95vw;
+  height: 3vh;
+  text-align: center;
+  font-weight: 600;
+}
+
+/*미디어쿼리*/
+
+@media screen and (max-width: 768px) {
+  .loader{
+    width: 200px;
+    height: 25px;
+  }
+
+  .loader:before{
+    height: 25px;
+  }
+
+  .loader:after{
+    font-size: 15px;
+  }
+
+  header {
+    font-size: 40px;
+  }
+
+  .inner_container {
+    width: 330px;
+  }
+
+  main {
+    width: 330px;
+    height: 300px;
+  }
+
+  .main {
+    font-size: 12px;
+    padding: 2px;
+  }
+
+  .form_btn {
+    margin-top: 60px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+
+  #auth {
+    width: 330px;
+    height: 300px;
+  }
+
+  #button {
+    width: 120px;
+    line-height: 20px;
+    font-size: 12px;
+  }
+
+  #numberText {
+    width: 180px;
+    line-height: 20px;
+    font-size: 12px;
+  }
+
+  #clock{
+    height: 600px;
+  }
+
+  #camera {
+    width: 300px;
+    height: 490px;
+  }
+
+  #camera_btn {
+    margin-top: 5px;
+  }
+
+  .call {
+    width: 100px;
+    height: 18px;
+    font-size: 14px;
+  }
+}
+</style>
+</head>
+  <body>
+    <!--로딩창-->
+    <div class="loadingPage">
+      <div class="box">
+        <div class="loader">
+        </div>
+      </div>
+    </div>
+    <!--인증폼-->
+    <div class="container">
+      <div class="inner_container">
+        <header class="header">smart-security</header>
+        <div class="navigation">
+          <div class="navigation_bar"></div>
+        </div>
+        <main>
+          <div class="main">
+            <h2>
+              스마트보안 계정
+              <br>
+              서비스 약관에 동의해 주세요.
+            </h2>
+            <form>
+              <div class="checkAll" role="checkbox">
+                <input  type="checkbox"value="true">
+                <label>
+                  <span></span>
+                  모두 동의합니다.
+                </label>
+              </div>
+                <p class="form_p">
+                  전체 동의는 필수 및 선택정보에 대한 동의도 포함되어 있으며, 개별적으로도 동의를 선택하실 수 있습니다.
+                  <br>
+                  선택항목에 대한 동의를 거부하시는 경우에도 서비스는 이용이 가능합니다.
+                </p>
+              <strong>
+                동의 항목
+              </strong>
+              <ul>
+                <li>
+                  <div class="checkOne" role="checkbox">
+                    <input type="checkbox" value="true">
+                    <label>
+                      <span></span>
+                      가입자 본인입니다.
+                    </label>
+                  </div>
+                </li>
+                <li>
+                  <div class="checkTwo" role="checkbox">
+                    <input type="checkbox" value="true">
+                    <label>
+                      <span></span>
+                      [필수] 사용법을 정독하였습니다.
+                    </label>
+                  </div>
+                </li>
+                <li>
+                  <div class="checkThree" role="checkbox">
+                    <input type="checkbox" value="true">
+                    <label>
+                      <span></span>
+                      [선택] 개인정보 추가 수집 동의
+                    </label>
+                  </div>
+                </li>
+              </ul>
+              <div class="form_btn">
+                <button disabled>동의</button>
+              </div>
+            </form>
+          </div>
+        </main>
+        <!--EmailJs 이메일 인증 보내기-->
+        <div id="auth">
+          <div class="main">
+            <h2>
+              본인 확인을 위해
+              <br>
+              등록한 이메일로 인증을 진행해 주세요.
+            </h2>
+            <form id="form">
+              <input type="hidden" name="from_name" id="from_name" value="Smart Camera">
+              <input type="hidden" name="to_name" id="to_name" value="crsn1111">
+              <input type="hidden" name="message" id="message">
+              <input required type="text" id="numberText" value="인증번호 입력">
+              <input type="submit" id="button" value=" 메일 전송하기 " >
+            </form>
+            <!--이메일로 도착한 번호와 동일하게 입력하였을때
+            로그인 성공 파이카메라 확인가능-->
+            <form id="sameNumber">
+              <input type="submit" id="numberText2" value="다음"></input>
+            </form>
+          </div>
+        </div>
+        <!--카메라 폼-->
+        <div id="clock">
+          <!--현재 시간-->
+          <h2>2021. 00. 00. 오전 00:00:00</h2>
+          <!-- 파이카메라 ( 이메일 인증 성공 시 확인 가능)-->
+          <img id="camera" src="{{ url_for('video_feed') }}">
+          <!-- 모바일 전화 신고 번호 -->
+          <div id="camera_btn">
+            <button class="call" onclick="document.location.href='tel:182'" /> 
+            <a href="tel:182">즉시 신고</a>
+            <button class="call full">
+              <span>전체 화면</span>
+            </button> 
+          </div>
+        </div>
+        <footer class="foooter" style="margin-top: 20px;">
+          <small>
+            Copyright © 2021 Corp. All rights reserved by <a href="https://github.com/jiho3894/Smart-Camera">Jiho3894</a>
+          </small>
+        </footer>
+      </div>
+    </div>
+    <div id="camera_full">
+      <button class="backScreen"></button>
+      <img class="fullScreen" src="{{ url_for('video_feed') }}">
+      <div class="screenBox">실시간 감시중... 초록 버튼을 눌러 축소</div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      emailjs.init('user_ctcoI2yDQRGZUR9S0APhl')
+    </script>
+    <script>
+      /*실시간 시간 표시 JS
+      Style.js*/
+      const clockEvent = document.querySelector("#clock"); 
+      const clockTitle = clockEvent.querySelector("h2");
+      const loading = document.querySelector('.loadingPage');
+      const loader = document.querySelector('.loader');
+      const numberText = document.getElementById('numberText');
+      const container = document.querySelector('.container');
+      const full = document.querySelector('.full');
+      const cameraFull = document.querySelector('#camera_full');
+      const backScreen = document.querySelector('.backScreen');
+
+      //카메라 확대
+      full.addEventListener('click', () => {
+        cameraFull.style.display = "flex";
+        clockEvent.style.display = 'none';
+        container.style.display = 'none';
+      })
+
+      backScreen.addEventListener('click', () =>{
+        cameraFull.style.display = "none";
+        clockEvent.style.display = '';
+        container.style.display = 'flex';
+      })
+
+      numberText.addEventListener('click', () => {
+        numberText.value = "";
+        numberText.style.opacity = 1;
+      })
+
+      setTimeout(() => {
+        loader.style.background = 'aqua';
+        loader.style.content = '완료';
+      }, 3800);
+
+      //로딩창 setTimeout
+
+      setTimeout(() => {
+        loading.style.display = 'none';
+        container.style.display = 'flex';
+      }, 5000);
+
+      container.style.display = 'none';
+      auth.style.display = 'none';
+      clockEvent.style.display = 'none';
+
+      // 실시간 시간 확인
+      const getTime = () => {
+        setInterval(() => {
+          const date = new Date();
+          const day = date.toLocaleString();
+          clockTitle.innerHTML = `${day}`;
+        }, 1000);
+      }
+      getTime();
+    </script>
+    <script>
+      /* 이메일 인증 , 인증 확인 절차 JS */
+
+      // 보안문자 변수
+      const number = Math.floor(Math.random() * 9999);
+
+      const btn = document.getElementById('button');
+      const sameNumber = document.getElementById('sameNumber');
+      const auth = document.getElementById('auth');
+      const form = document.getElementById('form');
+
+      //임시 확인용 보안문자
+      console.log(number);
+
+      const sendNumber = () => {
+        message.value = number;
+      }
+      sendNumber();
+
+      //Email.js
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        btn.value = '이메일 전송 중';
+        const serviceID = 'default_service';
+        const templateID = 'template_hefz86s';
+        emailjs.sendForm(serviceID, templateID, this)
+          .then(() => {
+            btn.value = '다시 전송하기';
+            alert('전송 완료!');
+          }, (err) => {
+            btn.value = 'Send Email';
+            alert(JSON.stringify(err));
+          });
+      });
+
+      sameNumber.addEventListener("submit", (e) => {
+        //새로고침 x
+        e.preventDefault();
+        const value = Number(numberText.value);
+        if(value === number) {
+          // 인증 폼 안보이게하기
+          alert('인증에 성공하였습니다.');
+          auth.style.display = "none";
+          clockEvent.style.display = 'block';
+          navBar.style.width = "100%";
+        } else {
+          // alert 오류 재 검사
+          alert('인증 실패하였습니다. 다시 입력해주세요');
+        }
+      });
+    </script>
+    <script>
+      const checkAll = document.querySelector(".checkAll input");
+      const check1 = document.querySelector(".checkOne input");
+      const check2 = document.querySelector(".checkTwo input");
+      const check3 = document.querySelector(".checkThree input");
+      const button = document.querySelector(".form_btn");
+      const btnCon = document.querySelector(".form_btn button");
+      const main = document.querySelector("main");
+      const navBar = document.querySelector(".navigation_bar");
+
+      const check = () => {
+        checkAll.checked = false,
+        check1.checked = false ,
+        check2.checked = false ,
+        check3.checked = false,
+        btnCon.disabled = true,
+        btnCon.style.background = "#f6f6f6",
+        btnCon.style.color = "#191919",
+        btnCon.style.cursor = "pointer"
+      }
+
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+        if(check1.checked === true && check2.checked === true) {
+          alert("동의 완료");
+          main.style.display = "none";
+          auth.style.display = "flex";
+          navBar.style.width = "50%";
+        } else {
+          alert("동의 항목을 모두 선택해주세요.");
+        }
+      });
+
+      button.addEventListener("mouseover", () => {
+        btnCon.style.background = "#f1d900";
+      })
+
+      button.addEventListener("mouseout", () => {
+        btnCon.style.background = "#fee500";
+      })
+
+      checkAll.addEventListener("click", () => {
+        if(checkAll.checked === true) {
+          confirm("약관을 읽고 모두 동의하시겠습니까?") ? (
+            check1.checked = true ,
+            check2.checked = true,
+            check3.checked = true,
+            btnCon.disabled = false,
+            btnCon.style.background = "#fee500",
+            btnCon.style.cursor = "pointer"
+            )
+            : (
+            check()
+            )
+        } else {
+          check()
+        }
+      });
+
+      check1.addEventListener("click", () => {
+        if(check1.checked === true && check2.checked === true) {
+          btnCon.disabled = false;
+          btnCon.style.background = "#fee500";
+          btnCon.style.cursor = "pointer";
+        } else {
+          btnCon.disabled = true,
+          btnCon.style.background = "#f6f6f6",
+          btnCon.style.color = "#191919",
+          btnCon.style.cursor = "pointer"
+        }
+      })
+
+      check2.addEventListener("click", () => {
+        if(check1.checked === true && check2.checked === true) {
+          btnCon.disabled = false;
+          btnCon.style.background = "#fee500";
+          btnCon.style.cursor = "pointer";
+        } else {
+          btnCon.disabled = true,
+          btnCon.style.background = "#f6f6f6",
+          btnCon.style.color = "#191919",
+          btnCon.style.cursor = "pointer"
+        }
+      })
+    </script>
+  </body>
+</html>
