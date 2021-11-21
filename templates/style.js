@@ -40,7 +40,6 @@ setTimeout(() => {
   container.style.display = 'flex';
 }, 5000);
 
-
 container.style.display = 'none';
 auth.style.display = 'none';
 clockEvent.style.display = 'none';
