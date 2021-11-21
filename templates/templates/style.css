@@ -1,0 +1,360 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+/* 로딩창 */
+.loadingPage{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.box{
+  height: 200px;
+  transition: all 0.2s ease;
+}
+
+.loader{
+  position: relative;
+  width: 300px;
+  height: 45px;
+  background: silver;
+  font-size: 15px;
+  line-height: 1.5;
+  border: 0;
+  border-radius: 15px;
+}
+
+.loader:before{
+  content: "";
+  position: absolute;
+  background-color: aqua;
+  border-radius: 15px;
+  top: 0px;
+  left: 0px;
+  height: 45px;
+  width: 0px;
+  z-index: 0;
+  opacity: 1;
+  -webkit-transform-origin:  100% 0%;
+      transform-origin:  100% 0% ;
+  -webkit-animation: loader 4s ease-in-out ;
+      animation: loader 4s ease-in-out ;
+}
+
+.loader:after{
+  content: "로딩중 ...";
+  color: black;
+  font-family:  Lato,"Helvetica Neue" ;
+  font-weight: 500;
+  font-size: 30px;
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  left: 0;
+  top: 0;
+}
+
+@-webkit-keyframes loader{
+    0%{width: 0px;}
+    100%{opacity: 1; width: 100%;}
+}
+
+@keyframes loader{
+    0%{width: 0px;}
+    100%{opacity: 1; width: 100%;}
+}
+
+
+
+/* 이용약관 동의 페이지 */
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner_container {
+  width: 550px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  width: inherit;
+  height: 70px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+main {
+  width: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 550px;
+}
+
+.main {
+  padding: 40px;
+}
+
+.navigation {
+  width: inherit;
+  height: 5px;
+  background: red;
+}
+
+.navigation_bar {
+  width: 0;
+  height: 5px;
+  background: green;
+}
+
+.form_p {
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form_btn {
+  width: inherit;
+  height: 45px;
+  background: #fee500;
+  margin-top: 40px;
+}
+
+/* .form_btn button:hover {
+  background: #f1d900;
+} */
+
+.form_btn button {
+  width: 100%;
+  height: 45px;
+  color: #191919;
+  background-color: #f6f6f6;
+  font-size: 15px;
+  line-height: 1.5;
+  border: 0;
+  border-radius: 4px;
+}
+
+/* 이용약관 이메일 인증 페이지 */
+#auth {
+  width: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#form {
+  padding-bottom: 6px;
+  border-bottom: 2px solid silver;
+}
+
+#numberText {
+  width: 320px;
+  line-height: 42px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  outline: none;
+  opacity: 0.6;
+}
+
+#button {
+  cursor: pointer;
+  width: 140px;
+  line-height: 38px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+  text-align: center;
+}
+
+#sameNumber {
+  width: inherit;
+  height: 45px;
+  background: #fee500;
+  margin-top: 40px;
+}
+
+#sameNumber input:hover {
+  background: #f1d900;
+}
+
+#sameNumber input {
+  width: 100%;
+  height: 45px;
+  background: #fee500;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 0;
+  border-radius: 4px;
+}
+
+/* 메인 카메라 페이지 */
+
+#clock{
+  text-align: center;
+  width: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 550px;
+}
+
+#camera {
+  width: 400px;
+  height: 400px;
+}
+
+#camera_btn {
+  margin-top: 20px;
+}
+
+.call {
+  cursor: pointer;
+  width: 150px;
+  height: 30px;
+  background: #fee500;
+  margin-right: 10px;
+  border: 0;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: red;
+  text-align: center;
+}
+
+/* 카메라 전체화면 폼*/
+#camera_full {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+}
+
+#camera_full .backScreen {
+  background-color: green;
+  width: 5vw;
+  height: 100vh;
+}
+
+#camera_full .fullScreen {
+  width: 95vw;
+  height: 100vh;
+}
+
+#camera_full .screenBox {
+  position: fixed;
+  right: 0;
+  background-color: slategrey;
+  width: 95vw;
+  height: 3vh;
+  text-align: center;
+  font-weight: 600;
+}
+
+/*미디어쿼리*/
+
+@media screen and (max-width: 768px) {
+  .loader{
+    width: 200px;
+    height: 25px;
+  }
+
+  .loader:before{
+    height: 25px;
+  }
+
+  .loader:after{
+    font-size: 15px;
+  }
+
+  header {
+    font-size: 40px;
+  }
+
+  .inner_container {
+    width: 330px;
+  }
+
+  main {
+    width: 330px;
+    height: 300px;
+  }
+
+  .main {
+    font-size: 12px;
+    padding: 2px;
+  }
+
+  .form_btn {
+    margin-top: 60px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+
+  #auth {
+    width: 330px;
+    height: 300px;
+  }
+
+  #button {
+    width: 120px;
+    line-height: 20px;
+    font-size: 12px;
+  }
+
+  #numberText {
+    width: 180px;
+    line-height: 20px;
+    font-size: 12px;
+  }
+
+  #clock{
+    height: 600px;
+  }
+
+  #camera {
+    width: 300px;
+    height: 490px;
+  }
+
+  #camera_btn {
+    margin-top: 5px;
+  }
+
+  .call {
+    width: 100px;
+    height: 18px;
+    font-size: 14px;
+  }
+}
+
+
+
+
