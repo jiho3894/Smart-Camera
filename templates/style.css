@@ -126,9 +126,14 @@ main {
   background: green;
 }
 
+label:nth-child(1) {
+  font-weight: 600;
+}
+
 .form_p {
   padding-bottom: 15px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: gray;
 }
 
 .form_btn {
