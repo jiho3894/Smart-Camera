@@ -1,8 +1,5 @@
 ![waving](https://capsule-render.vercel.app/api?type=waving&height=200&text=Smart-Camera&fontAlign=58&fontAlignY=30&color=gradient)
 
-(2021.11.23 ver)
-- 최종 운영자 메뉴얼 작성
-
 # 스마트 카메라
  
  **라즈베리파이** 를 이용하여 특정 시간 보안이 필요한 공간에서 **비디오 스트리밍**을 하여
