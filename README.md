@@ -34,6 +34,7 @@
  
 ## index.html
 [실행 과정 확인하기](https://github.com/jiho3894/Smart-Camera/files/7497202/start.pdf)
+ [운용자 ](https://github.com/jiho3894/Smart-Camera/files/7634394/default.pdf)
  
 ```python
 if __name__ == '__main__':  # 통신 연결
