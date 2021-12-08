@@ -1,7 +1,5 @@
 ![waving](https://capsule-render.vercel.app/api?type=waving&height=200&text=Smart-Camera&fontAlign=58&fontAlignY=30&color=gradient)
 
-# 운영자 매뉴얼
-
 # 스마트 카메라
  
  **라즈베리파이** 를 이용하여 특정 시간 보안이 필요한 공간에서 **비디오 스트리밍**을 하여
@@ -11,6 +9,8 @@
  
 ## 바로가기
 - 웹 페이지 https://jiho3894.github.io/Smart-Camera/templates/index.html
+- [운영자 매뉴얼](https://github.com/jiho3894/Smart-Camera/files/7674796/operation_manual_41730015.pdf)
+- [초기 동작 실험 영상](https://youtu.be/fQsbxvfW7DU)
 - [사용언어](#1)
 - [사용 방법](#2)
  
