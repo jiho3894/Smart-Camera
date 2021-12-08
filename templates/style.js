@@ -4,11 +4,11 @@ const clockEvent = document.querySelector("#clock");
 const clockTitle = clockEvent.querySelector("h2");
 const loading = document.querySelector('.loadingPage');
 const loader = document.querySelector('.loader');
-const numberText = document.getElementById('numberText');
 const container = document.querySelector('.container');
 const full = document.querySelector('.full');
 const cameraFull = document.querySelector('#camera_full');
 const backScreen = document.querySelector('.backScreen');
+const numberText = document.getElementById('numberText');
 
 //카메라 확대
 full.addEventListener('click', () => {

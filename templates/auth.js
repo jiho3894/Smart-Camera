@@ -21,7 +21,7 @@ form.addEventListener('submit', function(event) {
   event.preventDefault();
   btn.value = '이메일 전송 중';
   const serviceID = 'default_service';
-  const templateID = 'template_hefz86s';
+  const templateID = '본인 templateID';
   emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
       btn.value = '다시 전송하기';

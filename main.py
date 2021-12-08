@@ -15,13 +15,6 @@ object_classifier = cv2.CascadeClassifier("models/haarcascade_upperbody.xml") # 
 app = Flask(__name__) # 서버 입장 데이터값 입력
 last_epoch = 0
 
-pin = 18
-GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(pin, GPIO.OUT)
-servo = GPIO.PWM(pin,50)
-servo.start(0)
-
 def check_for_objects():  # 이메일 전송 관련 코드
 	global last_epoch
 	while True:
@@ -55,4 +48,4 @@ if __name__ == '__main__':  # 통신 연결
     t = threading.Thread(target=check_for_objects, args=())
     t.daemon = True
     t.start()
-    app.run(host='0.0.0.0', port=8030, debug=False)
+    app.run(host='0.0.0.0', port=5000, debug=False)

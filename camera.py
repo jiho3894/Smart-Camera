@@ -1,8 +1,8 @@
-import cv2
+import cv2 #OpenCV
 from imutils.video.pivideostream import PiVideoStream
 import imutils
 import time
-import numpy as np
+import numpy as np  #다차원 배열
 
 class VideoCamera(object):
     def __init__(self, flip = False):
@@ -39,7 +39,6 @@ class VideoCamera(object):
         if len(objects) > 0:
             found_objects = True
 
-        # Draw a rectangle around the objects
         for (x, y, w, h) in objects:
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
