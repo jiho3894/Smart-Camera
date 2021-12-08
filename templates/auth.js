@@ -1,12 +1,11 @@
 /* 이메일 인증 , 인증 확인 절차 JS */
-
-// 보안문자 변수
-const number = Math.floor(Math.random() * 9999);
-
 const btn = document.getElementById('button');
 const sameNumber = document.getElementById('sameNumber');
 const auth = document.getElementById('auth');
 const form = document.getElementById('form');
+
+// 보안문자 변수
+const number = Math.floor(Math.random() * 9999);
 
 //임시 확인용 보안문자
 console.log(number);
@@ -32,6 +31,7 @@ form.addEventListener('submit', function(event) {
     });
 });
 
+//동일 번호인지 체크하기
 sameNumber.addEventListener("submit", (e) => {
   //새로고침 x
   e.preventDefault();

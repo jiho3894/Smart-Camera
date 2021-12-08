@@ -7,6 +7,7 @@ const btnCon = document.querySelector(".form_btn button");
 const main = document.querySelector("main");
 const navBar = document.querySelector(".navigation_bar");
 
+//중복 값 담기
 const check = () => {
   checkAll.checked = false,
   check1.checked = false ,
@@ -18,6 +19,7 @@ const check = () => {
   btnCon.style.cursor = "pointer"
 }
 
+// 다음 버튼 활성화 여부
 button.addEventListener("click", (e) => {
   e.preventDefault();
   if(check1.checked === true && check2.checked === true) {
@@ -38,6 +40,7 @@ button.addEventListener("mouseout", () => {
   btnCon.style.background = "#fee500";
 })
 
+//전체 동의
 checkAll.addEventListener("click", () => {
   if(checkAll.checked === true) {
     confirm("약관을 읽고 모두 동의하시겠습니까?") ? (
@@ -56,6 +59,7 @@ checkAll.addEventListener("click", () => {
   }
 });
 
+//1번
 check1.addEventListener("click", () => {
   if(check1.checked === true && check2.checked === true) {
     btnCon.disabled = false;
@@ -69,6 +73,7 @@ check1.addEventListener("click", () => {
   }
 })
 
+//2번
 check2.addEventListener("click", () => {
   if(check1.checked === true && check2.checked === true) {
     btnCon.disabled = false;

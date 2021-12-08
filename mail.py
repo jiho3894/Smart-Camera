@@ -5,11 +5,10 @@ from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 
 # * 이메일 전송 코드 *
-
 # 수신자와 발신자 지정
-fromEmail = 'crsn1111@gmail.com'
+fromEmail = '수신자 이메일'
 fromEmailPassword = '보내는 사람 이메일의 앱 비밀번호'
-toEmail = 'crsn1013@gmail.com'
+toEmail = '발신자 이메일'
 
 def sendEmail(image):
 	# 메일 수신 제목,수발신자,내용
