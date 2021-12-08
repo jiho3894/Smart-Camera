@@ -9,7 +9,7 @@
  
 ## 바로가기
 - 웹 페이지 https://jiho3894.github.io/Smart-Camera/templates/index.html
-- [운영자 매뉴얼](https://github.com/jiho3894/Smart-Camera/files/7674796/operation_manual_41730015.pdf)
+- [운영자 매뉴얼](https://github.com/jiho3894/Smart-Camera/files/7674796/operation_manual_41730015.pdf) 한글 문서 변환 권장(하이퍼링크 )
 - [초기 동작 실험 영상](https://youtu.be/fQsbxvfW7DU)
 - [사용언어](#1)
 - [사용 방법](#2)
